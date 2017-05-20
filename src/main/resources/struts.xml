@@ -6,11 +6,26 @@
 
 <struts>
 
+    <!-- 管理员Action-->
     <package name="adminpack" extends="struts-default">
-        <action name="login" class="loginAction">
-            <result name="success">/WEB-INF/test/suc.jsp</result>
+        <!-- 登录Action -->
+        <action name="login" class="loginAction" method="login">
+            <result name="success">/WEB-INF/admin/adminLogin.jsp</result>
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
+
+        <!-- 跳转到食堂查询页面"canteenInfo.jsp"的Action-->
+        <action name="turn_canteenInfo" class="adminAction" method="turnCanteenInfo">
+            <result name="success">/WEB-INF/admin/canteenInfo.jsp</result>
+            <result name="error">/WEB-INF/admin/canteenInfo.jsp</result>
+        </action>
+
+        <!-- 跳转到餐品查询页面"dishInfo.jsp"的Action-->
+        <action name="turn_dishInfo" class="adminAction" method="turnDishInfo">
+            <result name="success">/WEB-INF/admin/dishInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+
     </package>
 
 </struts>

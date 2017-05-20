@@ -1,19 +1,17 @@
 package entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by why777s on 2017/5/18.
+ * Created by why777s on 2017/5/20.
  */
 @Entity
 public class Comment {
     private int commentId;
     private String commentContent;
     private Timestamp commentTime;
+    private Dish dishByDid;
 
     @Id
     @Column(name = "comment_id", nullable = false)
@@ -66,5 +64,15 @@ public class Comment {
         result = 31 * result + (commentContent != null ? commentContent.hashCode() : 0);
         result = 31 * result + (commentTime != null ? commentTime.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "did", referencedColumnName = "did", nullable = false)
+    public Dish getDishByDid() {
+        return dishByDid;
+    }
+
+    public void setDishByDid(Dish dishByDid) {
+        this.dishByDid = dishByDid;
     }
 }

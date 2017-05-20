@@ -51,16 +51,36 @@
     <bean id="adminDao" class="dao.impl.AdminDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <bean id="canteenDao" class="dao.impl.CanteenDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="floorDao" class="dao.impl.FloorDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="windowDao" class="dao.impl.WindowDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="dishDao" class="dao.impl.DishDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 
     <!-- Service Bean -->
     <bean id="adminService" class="service.impl.AdminServiceImpl">
         <property name="adminDao" ref="adminDao"/>
+        <property name="canteenDao" ref="canteenDao"/>
+        <property name="floorDao" ref="floorDao"/>
+        <property name="windowDao" ref="windowDao"/>
+        <property name="dishDao" ref="dishDao"/>
     </bean>
 
 
     <!-- Action Bean -->
     <bean class="controller.LoginAction" id="loginAction">
+        <property name="adminService" ref="adminService"/>
+    </bean>
+
+    <bean class="controller.AdminAction" id="adminAction">
         <property name="adminService" ref="adminService"/>
     </bean>
 

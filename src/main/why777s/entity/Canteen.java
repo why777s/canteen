@@ -1,9 +1,6 @@
 package entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by why777s on 2017/5/18.
@@ -53,4 +50,5 @@ public class Canteen {
         result = 31 * result + (canteenCname != null ? canteenCname.hashCode() : 0);
         return result;
     }
+
 }

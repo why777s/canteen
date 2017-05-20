@@ -1,26 +1,24 @@
 package entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by why777s on 2017/5/18.
+ * Created by why777s on 2017/5/20.
  */
 @Entity
 public class Dish {
-    private String did;
+    private int did;
     private String dname;
     private double dprice;
+    private Window windowByWid;
 
     @Id
-    @Column(name = "did", nullable = false, length = 45)
-    public String getDid() {
+    @Column(name = "did", nullable = false)
+    public int getDid() {
         return did;
     }
 
-    public void setDid(String did) {
+    public void setDid(int did) {
         this.did = did;
     }
 
@@ -51,8 +49,8 @@ public class Dish {
 
         Dish dish = (Dish) o;
 
+        if (did != dish.did) return false;
         if (Double.compare(dish.dprice, dprice) != 0) return false;
-        if (did != null ? !did.equals(dish.did) : dish.did != null) return false;
         if (dname != null ? !dname.equals(dish.dname) : dish.dname != null) return false;
 
         return true;
@@ -62,10 +60,21 @@ public class Dish {
     public int hashCode() {
         int result;
         long temp;
-        result = did != null ? did.hashCode() : 0;
+        result = did;
         result = 31 * result + (dname != null ? dname.hashCode() : 0);
         temp = Double.doubleToLongBits(dprice);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "wid" ,referencedColumnName = "wid",nullable = false)
+    public Window getWindowByWid() {
+        return windowByWid;
+    }
+
+    public void setWindowByWid(Window windowByWid) {
+        this.windowByWid = windowByWid;
+    }
+
 }

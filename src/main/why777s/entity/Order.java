@@ -4,14 +4,13 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by why777s on 2017/5/18.
+ * Created by why777s on 2017/5/20.
  */
 @Entity
 public class Order {
     private int oid;
     private Timestamp orderTime;
     private Dish dishByDid;
-    private Student studentBySid;
 
     @Id
     @Column(name = "oid", nullable = false)
@@ -61,15 +60,5 @@ public class Order {
 
     public void setDishByDid(Dish dishByDid) {
         this.dishByDid = dishByDid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "sid", referencedColumnName = "sid", nullable = false)
-    public Student getStudentBySid() {
-        return studentBySid;
-    }
-
-    public void setStudentBySid(Student studentBySid) {
-        this.studentBySid = studentBySid;
     }
 }
