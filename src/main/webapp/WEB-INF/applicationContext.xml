@@ -22,9 +22,11 @@
                 <value>entity.Comment</value>
                 <value>entity.Dish</value>
                 <value>entity.Floor</value>
-                <value>entity.Order</value>
                 <value>entity.Student</value>
                 <value>entity.Window</value>
+                <value>entity.DishOrder</value>
+                <value>entity.OrderStu</value>
+                <value>entity.Employee</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -63,6 +65,21 @@
     <bean id="dishDao" class="dao.impl.DishDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <bean id="studentDao" class="dao.impl.StudentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="dishOrderDao" class="dao.impl.DishOrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="employeeDao" class="dao.impl.EmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="commentDao" class="dao.impl.CommentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 
     <!-- Service Bean -->
@@ -72,16 +89,46 @@
         <property name="floorDao" ref="floorDao"/>
         <property name="windowDao" ref="windowDao"/>
         <property name="dishDao" ref="dishDao"/>
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+
+    <bean id="studentService" class="service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+        <property name="orderDao" ref="orderDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="canteenDao" ref="canteenDao"/>
+        <property name="commentDao" ref="commentDao"/>
+        <property name="dishorderDao" ref="dishOrderDao"/>
+        <property name="floorDao" ref="floorDao"/>
+        <property name="windowDao" ref="windowDao"/>
+    </bean>
+
+    <bean id="employeeService" class="service.impl.EmployeeServiceImpl">
+        <property name="employeeDao" ref="employeeDao"/>
+        <property name="commentDao" ref="commentDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="orderDao" ref="orderDao"/>
     </bean>
 
 
     <!-- Action Bean -->
     <bean class="controller.LoginAction" id="loginAction">
         <property name="adminService" ref="adminService"/>
+        <property name="studentService" ref="studentService"/>
+        <property name="employeeService" ref="employeeService"/>
     </bean>
 
     <bean class="controller.AdminAction" id="adminAction">
         <property name="adminService" ref="adminService"/>
     </bean>
+
+    <bean class="controller.StudentAction" id="studentAction">
+        <property name="studentService" ref="studentService"/>
+    </bean>
+
+    <bean class="controller.EmployeeAction" id="employeeAction">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
 
 </beans>

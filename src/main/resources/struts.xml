@@ -6,14 +6,19 @@
 
 <struts>
 
-    <!-- 管理员Action-->
-    <package name="adminpack" extends="struts-default">
+    <!-- 通用package-->
+    <package name="common" extends="struts-default">
         <!-- 登录Action -->
         <action name="login" class="loginAction" method="login">
-            <result name="success">/WEB-INF/admin/adminLogin.jsp</result>
+            <result name="admin_login">/WEB-INF/admin/adminLogin.jsp</result>
+            <result name="student_login">/WEB-INF/student/studentLogin.jsp</result>
+            <result name="employee_login">/WEB-INF/employee/employeeLogin.jsp</result>
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
+    </package>
 
+    <!-- 管理员Action-->
+    <package name="adminpack" extends="struts-default">
         <!-- 跳转到食堂查询页面"canteenInfo.jsp"的Action-->
         <action name="turn_canteenInfo" class="adminAction" method="turnCanteenInfo">
             <result name="success">/WEB-INF/admin/canteenInfo.jsp</result>
@@ -26,6 +31,40 @@
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
 
+        <!-- 跳转到餐品修改页面"dishUpdate.jsp"的Action -->
+        <action name="turn_dishUpdate" class="adminAction" method="turnDishUpdate">
+            <result name="success">/WEB-INF/admin/dishUpdate.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+
+        <!-- 跳转到订单查看页面"orderInfo.jsp"的Action -->
+        <action name="admin_turn_orderInfo" class="adminAction" method="turnOrderInfo">
+            <result name="success">/WEB-INF/admin/orderInfo.jsp</result>
+            <result name="error">/WEB-INF/admin/orderInfo.jsp</result>
+
+        </action>
+        
+        <!-- 修改餐品 保存Action -->
+        <action name="dish_update" class="adminAction" method="dishUpdate">
+            <result name="success">/WEB-INF/admin/dishUpdate.jsp</result>
+            <result name="error">/WEB-INF/admin/dishUpdate.jsp</result>
+        </action>
     </package>
+
+    <!-- 学生Action -->
+    <package name="studentpack" extends="struts-default">
+        <!--查看订单-->
+        <action name="stu_turn_orderInfo" class="studentAction" method="turnOrderInfo">
+            <result name="success">/WEB-INF/student/orderInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+        <!--查看评论-->
+        <action name="turn_commentInfo" class="studentAction" method="turnCommentInfo">
+            <result name="success">/WEB-INF/student/commentInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+    </package>
+
+
 
 </struts>

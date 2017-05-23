@@ -16,10 +16,16 @@ public class AdminServiceImpl implements AdminService {
     private FloorDaoImpl floorDao;
     private WindowDaoImpl windowDao;
     private DishDaoImpl dishDao;
+    private OrderDaoImpl orderDao;
+
+    public void setOrderDao(OrderDaoImpl orderDao) {
+        this.orderDao = orderDao;
+    }
 
     public void setDishDao(DishDaoImpl dishDao) {
         this.dishDao = dishDao;
     }
+
     public void setWindowDao(WindowDaoImpl windowDao) {
         this.windowDao = windowDao;
     }
@@ -70,5 +76,28 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public List<Dish> getAllDishes() {
         return dishDao.findall(Dish.class);
+    }
+
+
+    @Transactional
+    public void updateDish(Dish dish) {
+        dishDao.update(dish);
+    }
+
+    @Transactional
+    public Dish getDishByDid(int did) {
+        return dishDao.get(Dish.class,did);
+    }
+
+    @Transactional
+    public Window getWindowByWid(String wid) {
+        return windowDao.get(Window.class,wid);
+    }
+
+    @Transactional
+    public List<OrderStu> getOrderByOrderStatus(String status) {
+        String hql = "from OrderStu " +
+                "where orderStatus=?";
+        return orderDao.find_withOnePara(hql,status);
     }
 }

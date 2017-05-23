@@ -46,27 +46,17 @@
             <s:iterator value="#request.first_windows" id="ff" status="st">
                 <s:set name="ff_wid" value="#ff.wid"/>
                 <h5> <s:property value="#st.count"/> 号窗口
-                     <s:property value="#ff.wname"/>
+                    <s:property value="#ff.wname"/>
                 </h5>
                 <table class="table table-hover table-bordered">
                     <tr>
                         <th>名称</th>
                         <th>价格</th>
                     </tr>
-                    <s:iterator value="#request.dishes" id="dd" status="st">
+                    <s:iterator value="#request.dishes" id="dd">
                         <s:if test="#dd.windowByWid.wid== #ff.wid">
-                            <s:if test="#st.getCount()%4==0">
-                                <tr class="success">
-                            </s:if>
-                            <s:elseif test="#st.getCount()%4==1">
-                                <tr class="error">
-                            </s:elseif>
-                            <s:elseif test="#st.getCount()%4==2">
-                                <tr class="warning">
-                            </s:elseif>
-                            <s:elseif test="#st.getCount()%4==3">
-                                <tr class="info">
-                            </s:elseif>                                <td width="50%"> <s:property value="#dd.dname"/> </td>
+                            <tr>
+                                <td width="50%"> <s:property value="#dd.dname"/> </td>
                                 <td width="50%"> <s:property value="#dd.dprice"/> </td>
                             </tr>
                         </s:if>
@@ -76,31 +66,20 @@
         </div>
 
 
-            <%-- 二楼 --%>
+        <%-- 二楼 --%>
         <div class="tab-pane " contenteditable="false" id="panel-529442">
             <s:iterator value="#request.second_windows" id="sf" status="st2">
                 <h5> <s:property value="#st2.count"/> 号窗口
-                     <s:property value="#sf.wname"/>
+                    <s:property value="#sf.wname"/>
                 </h5>
                 <table class="table table-hover table-bordered">
                     <tr>
                         <th>名称</th>
                         <th>价格</th>
                     </tr>
-                    <s:iterator value="#request.dishes" id="dd" status="st">
+                    <s:iterator value="#request.dishes" id="dd">
                         <s:if test="#dd.windowByWid.wid== #sf.wid">
-                            <s:if test="#st.getCount()%4==0">
-                                <tr class="success">
-                            </s:if>
-                            <s:elseif test="#st.getCount()%4==1">
-                                <tr class="error">
-                            </s:elseif>
-                            <s:elseif test="#st.getCount()%4==2">
-                                <tr class="warning">
-                            </s:elseif>
-                            <s:elseif test="#st.getCount()%4==3">
-                                <tr class="info">
-                            </s:elseif>
+                            <tr>
                                 <td width="50%"> <s:property value="#dd.dname"/> </td>
                                 <td width="50%"> <s:property value="#dd.dprice"/> </td>
                             </tr>

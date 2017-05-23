@@ -1,17 +1,22 @@
 package entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
- * Created by why777s on 2017/5/20.
+ * Created by why777s on 2017/5/22.
  */
 @Entity
 public class Comment {
     private int commentId;
     private String commentContent;
-    private Timestamp commentTime;
+    private Date commentTime;
+
+    private int did;
+    private String sid;
     private Dish dishByDid;
+    private Student studentBySid;
+
 
     @Id
     @Column(name = "comment_id", nullable = false)
@@ -22,6 +27,18 @@ public class Comment {
     public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
+
+
+
+    @Basic
+    @Column(name = "did",nullable = false)
+    public int getDid() {return did;}
+    public void setDid(int did) {this.did = did;}
+
+    @Basic
+    @Column(name = "sid",nullable = false)
+    public String getSid() {return sid;}
+    public void setSid(String sid) {this.sid = sid;}
 
     @Basic
     @Column(name = "comment_content", nullable = false, length = 45)
@@ -35,11 +52,11 @@ public class Comment {
 
     @Basic
     @Column(name = "comment_time", nullable = false)
-    public Timestamp getCommentTime() {
+    public Date getCommentTime() {
         return commentTime;
     }
 
-    public void setCommentTime(Timestamp commentTime) {
+    public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }
 
@@ -67,11 +84,18 @@ public class Comment {
     }
 
     @ManyToOne
-    @JoinColumn(name = "did", referencedColumnName = "did", nullable = false)
-    public Dish getDishByDid() {
-        return dishByDid;
+    @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false,insertable = false,updatable = false)
+    public Student getStudentBySid() {
+        return studentBySid;
     }
 
+    public void setStudentBySid(Student studentBySid) {
+        this.studentBySid = studentBySid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "did", referencedColumnName = "did", nullable = false,insertable = false,updatable = false)
+    public Dish getDishByDid() {return dishByDid;}
     public void setDishByDid(Dish dishByDid) {
         this.dishByDid = dishByDid;
     }

@@ -1,5 +1,6 @@
 package service;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import entity.*;
 
 import java.util.List;
@@ -52,5 +53,19 @@ public interface AdminService {
      * @return the list
      */
     List<Dish> getAllDishes();
+
+    Window getWindowByWid(String wid);
+
+    void updateDish(Dish dish);
+
+    Dish getDishByDid(int did);
+
+
+
+    /*
+     * 根据订单状态获取订单
+     * 订单状态 : "NEW" or "FINISH"
+     */
+    List<OrderStu> getOrderByOrderStatus(String status);
 
 }

@@ -13,16 +13,10 @@
         String path = request.getContextPath();
         String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     %>
-
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="<%=basePath%>/bootstrap/js/bootstrap.js"></script>
-
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link href="<%=basePath%>/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <title>后台管理</title>
+    <title>员工管理</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -30,18 +24,12 @@
         <div class="span12">
             <div class="page-header">
                 <h2>
-                    餐饮管理系统 <small>欢迎管理员:<s:property value="#session.userID"/> </small>
+                    餐饮管理系统 <small>欢迎员工:<s:property value="#session.userID"/></small>
                 </h2>
             </div>
             <ul class="nav nav-pills">
                 <li class="active">
                     <a href="#">首页</a>
-                </li>
-                <li>
-                    <a href="#">资料</a>
-                </li>
-                <li class="disabled">
-                    <a href="#">信息</a>
                 </li>
             </ul>
         </div>
@@ -57,13 +45,10 @@
                     基本查询
                 </li>
                 <li>
-                    <a href="<s:url action="turn_canteenInfo"/>" target="cont">食堂查询</a>
+                    <a href="<s:url action="turn_canteenInfo"/>" target="cont">订餐查询</a>
                 </li>
                 <li>
                     <a href="<s:url action="turn_dishInfo"/>" target="cont">餐品查询</a>
-                </li>
-                <li>
-                    <a href="#" target="cont">查看评论</a>
                 </li>
                 <li class="nav-header">
                     食堂操作
@@ -72,14 +57,10 @@
                     <a href="#">窗口修改</a>
                 </li>
                 <li>
-                    <a href="<s:url action="turn_dishUpdate"/>" target="cont">餐品修改</a>
+                    <a href="#">餐品修改</a>
                 </li>
-
                 <li class="nav-header">
                     订单操作
-                </li>
-                <li>
-                    <a href="<s:url action="admin_turn_orderInfo"/>" target="cont">订单查询</a>
                 </li>
                 <li>
                     <a href="#">订单处理</a>
