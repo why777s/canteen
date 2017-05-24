@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class StudentServiceImpl implements StudentService {
     private StudentDaoImpl studentDao;
-    private OrderDaoImpl orderDao;
+    private OrderStuDaoImpl orderstuDao;
     private CommentDaoImpl commentDao;
     private CanteenDaoImpl canteenDao;
     private FloorDaoImpl floorDao;
@@ -21,7 +21,7 @@ public class StudentServiceImpl implements StudentService {
     private DishOrderDaoImpl dishorderDao;
 
     public void setStudentDao(StudentDaoImpl studentDao) {this.studentDao = studentDao;}
-    public void setOrderDao(OrderDaoImpl orderDao) {this.orderDao = orderDao;}
+    public void setOrderstuDao(OrderStuDaoImpl orderstuDao) {this.orderstuDao = orderstuDao;}
     public void setCommentDao(CommentDaoImpl commentDao) {this.commentDao = commentDao;}
     public void setDishDao(DishDaoImpl dishDao) {this.dishDao = dishDao;}
     public void setCanteenDao(CanteenDaoImpl canteenDao) {this.canteenDao = canteenDao;}
@@ -47,10 +47,10 @@ public class StudentServiceImpl implements StudentService {
 
     //查学生订单
     @Transactional
-    public List<OrderStu> getOrder(String sid){
+    public List<OrderStu> getOrderStu(String sid){
         System.out.print("学号"+sid+"\n");
         String hql="from OrderStu where sid=?";
-        return orderDao.find_withOnePara(hql,"stu01");
+        return orderstuDao.find_withOnePara(hql,sid);
     }
 
     //查学生评论
@@ -66,12 +66,6 @@ public class StudentServiceImpl implements StudentService {
     public List<Canteen> getAllCanteen(){return canteenDao.findall(Canteen.class);}
 
     @Transactional
-    public List<Floor> getFloorByCanteenId(String canteenid) {
-        String hql = "from Floor " +
-                "where canteen_id = ? ";
-        return floorDao.find_withOnePara(hql,canteenid);
-    }
-    @Transactional
     public List<Window> getWindowByFloorId(String fid) {
         String hql = "from Window " +
                 "where fid=?";
@@ -82,6 +76,10 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public List<Dish> getAllDishes() {
         return dishDao.findall(Dish.class);
+    }
+    @Transactional
+    public List<Floor> getAllFloor(){
+        return floorDao.findall(Floor.class);
     }
 
 }

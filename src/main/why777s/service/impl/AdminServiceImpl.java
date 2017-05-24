@@ -16,10 +16,10 @@ public class AdminServiceImpl implements AdminService {
     private FloorDaoImpl floorDao;
     private WindowDaoImpl windowDao;
     private DishDaoImpl dishDao;
-    private OrderDaoImpl orderDao;
+    private OrderStuDaoImpl orderstuDao;
 
-    public void setOrderDao(OrderDaoImpl orderDao) {
-        this.orderDao = orderDao;
+    public void setOrderstuDao(OrderStuDaoImpl orderstuDao) {
+        this.orderstuDao = orderstuDao;
     }
 
     public void setDishDao(DishDaoImpl dishDao) {
@@ -98,6 +98,6 @@ public class AdminServiceImpl implements AdminService {
     public List<OrderStu> getOrderByOrderStatus(String status) {
         String hql = "from OrderStu " +
                 "where orderStatus=?";
-        return orderDao.find_withOnePara(hql,status);
+        return orderstuDao.find_withOnePara(hql,status);
     }
 }

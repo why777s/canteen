@@ -87,7 +87,6 @@ public class OrderStu {
     public Student getStudentBySid() {
         return studentBySid;
     }
-
     public void setStudentBySid(Student studentBySid) {
         this.studentBySid = studentBySid;
     }

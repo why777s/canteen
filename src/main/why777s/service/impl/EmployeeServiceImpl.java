@@ -3,7 +3,7 @@ package service.impl;
 import dao.impl.CommentDaoImpl;
 import dao.impl.DishDaoImpl;
 import dao.impl.EmployeeDaoImpl;
-import dao.impl.OrderDaoImpl;
+import dao.impl.OrderStuDaoImpl;
 import entity.Employee;
 import org.springframework.transaction.annotation.Transactional;
 import service.EmployeeService;
@@ -13,12 +13,12 @@ import service.EmployeeService;
  */
 public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDaoImpl employeeDao;
-    private OrderDaoImpl orderDao;
+    private OrderStuDaoImpl orderstuDao;
     private CommentDaoImpl commentDao;
     private DishDaoImpl dishDao;
 
     public void setEmployeeDao(EmployeeDaoImpl employeeDao) {this.employeeDao = employeeDao;}
-    public void setOrderDao(OrderDaoImpl orderDao) {this.orderDao = orderDao;}
+    public void setOrderstuDao(OrderStuDaoImpl orderstuDao) {this.orderstuDao = orderstuDao;}
     public void setCommentDao(CommentDaoImpl commentDao) {this.commentDao = commentDao;}
     public void setDishDao(DishDaoImpl dishDao) {this.dishDao = dishDao;}
 

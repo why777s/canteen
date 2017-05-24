@@ -1,9 +1,7 @@
 package controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import entity.Comment;
-import entity.OrderStu;
-import entity.Student;
+import entity.*;
 import org.apache.struts2.ServletActionContext;
 import service.impl.StudentServiceImpl;
 
@@ -19,16 +17,44 @@ public class StudentAction extends ActionSupport {
     public void setStudentService(StudentServiceImpl studentService) {this.studentService = studentService;}
     public StudentServiceImpl getStudentService() {return studentService;}
     //视图变量
-    private List<OrderStu> orderList;
+    //订单
+    private List<OrderStu> orderstuList;
+    //评论
     private List<Comment> commentList;
-    public void setOrderList(List<OrderStu> orderList) {
-        this.orderList = orderList;
+    //菜单
+    private List<Dish> dishList;
+    private List<Floor> floorList;
+    private List<Window> first_windows;
+    private List<Window> second_windows;
+    private int dishsize;
+
+    public void setOrderstuList(List<OrderStu> orderstuList) {
+        this.orderstuList = orderstuList;
     }
     public void setCommentList(List<Comment> commentList) {
         this.commentList = commentList;
     }
     public List<Comment> getCommentList() {return commentList;}
-    public List<OrderStu> getOrderList() {return orderList;}
+    public List<OrderStu> getOrderstuList() {return orderstuList;}
+    public List<Dish> getDishList() {return dishList;}
+    public void setDishList(List<Dish> dishList) {this.dishList = dishList;}
+    public List<Floor> getFloorList() {return floorList;}
+    public void setFloorList(List<Floor> floorList) {this.floorList = floorList;}
+
+    public List<Window> getFirst_windows() {
+        return first_windows;
+    }
+    public void setFirst_windows(List<Window> first_windows) {
+        this.first_windows = first_windows;
+    }
+    public List<Window> getSecond_windows() {
+        return second_windows;
+    }
+    public void setSecond_windows(List<Window> second_windows) {
+        this.second_windows = second_windows;
+    }
+    public int getDishsize() {return dishsize;}
+    public void setDishsize(int dishsize) {this.dishsize = dishsize;}
 
     // 从Session中获取当前登录用户的id
     public String getUserFromSession(){
@@ -37,15 +63,26 @@ public class StudentAction extends ActionSupport {
     }
 
     //查看餐品
-
+    public String turnDishInfo() throws Exception{
+        floorList = studentService.getAllFloor();
+        dishList = studentService.getAllDishes();
+        dishsize=dishList.size();
+        try{
+            first_windows = studentService.getWindowByFloorId(floorList.get(0).getFid());
+            second_windows = studentService.getWindowByFloorId(floorList.get(1).getFid());
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+        return SUCCESS;
+    }
 
     //查看订单
     public String turnOrderInfo() throws Exception{
         String sid=getUserFromSession();
-        System.out.print("学号："+sid+"\n");
         Student stu=studentService.getStu(sid);
         try{
-            orderList=studentService.getOrder(sid);
+            orderstuList =studentService.getOrderStu(sid);
         } catch (Exception e){
             e.printStackTrace();
             return ERROR;

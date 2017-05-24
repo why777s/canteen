@@ -26,7 +26,7 @@
         <td>下单时间</td>
         <td>操作</td>
     </tr>
-    <s:iterator status="st" value="#request.orderList" id="ol">
+    <s:iterator status="st" value="#request.orderstuList" id="ol">
         <s:if test="#st.getCount()%4==0">
             <tr class="success">
         </s:if>

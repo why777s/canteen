@@ -10,7 +10,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/canteen?useUnicode=true&amp;characterEncoding=UTF8"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="love1212"/>
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -68,7 +68,7 @@
     <bean id="studentDao" class="dao.impl.StudentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+    <bean id="orderstuDao" class="dao.impl.OrderStuDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="dishOrderDao" class="dao.impl.DishOrderDaoImpl">
@@ -89,12 +89,12 @@
         <property name="floorDao" ref="floorDao"/>
         <property name="windowDao" ref="windowDao"/>
         <property name="dishDao" ref="dishDao"/>
-        <property name="orderDao" ref="orderDao"/>
+        <property name="orderstuDao" ref="orderstuDao"/>
     </bean>
 
     <bean id="studentService" class="service.impl.StudentServiceImpl">
         <property name="studentDao" ref="studentDao"/>
-        <property name="orderDao" ref="orderDao"/>
+        <property name="orderstuDao" ref="orderstuDao"/>
         <property name="dishDao" ref="dishDao"/>
         <property name="canteenDao" ref="canteenDao"/>
         <property name="commentDao" ref="commentDao"/>
@@ -107,7 +107,7 @@
         <property name="employeeDao" ref="employeeDao"/>
         <property name="commentDao" ref="commentDao"/>
         <property name="dishDao" ref="dishDao"/>
-        <property name="orderDao" ref="orderDao"/>
+        <property name="orderstuDao" ref="orderstuDao"/>
     </bean>
 
 
