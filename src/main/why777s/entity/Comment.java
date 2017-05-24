@@ -20,15 +20,10 @@ public class Comment {
 
     @Id
     @Column(name = "comment_id", nullable = false)
-    public int getCommentId() {
-        return commentId;
-    }
-
+    public int getCommentId() {return commentId;}
     public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
-
-
 
     @Basic
     @Column(name = "did",nullable = false)
@@ -45,7 +40,6 @@ public class Comment {
     public String getCommentContent() {
         return commentContent;
     }
-
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent;
     }
@@ -55,7 +49,6 @@ public class Comment {
     public Date getCommentTime() {
         return commentTime;
     }
-
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }

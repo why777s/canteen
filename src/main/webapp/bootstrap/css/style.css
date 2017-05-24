@@ -7,7 +7,7 @@ ul{ padding: 0; margin: 0;}
 .list-content{ position: relative; overflow: hidden; }
 .list-left{ width: 25%; position: fixed;  height: 90%;  top: 50px;  overflow: auto; border-right: 1px solid #ddd; }
 .list-left li {width: 100%;  font-size: 1.4rem;
-    height: 4rem;line-height: 4rem;text-align: center; border-bottom: 1px solid #ddd;overflow: hidden;}
+    height: 4rem;line-height: 4rem;text-align: center; border: 1px solid #ddd;overflow: hidden;}
 .list-left li a{ color: #666;}
 .list-left .current{ border-left: 3px solid #39b867;}
 .list-left .current a{ color: #39b867;}
@@ -21,16 +21,16 @@ ul{ padding: 0; margin: 0;}
     border-radius: 5px;
 }
 .list-right .am-gallery-default .am-gallery-title{ text-align: center; font-size: 1.6rem; margin-top: 10px;}
-.list-pro{ overflow: hidden; padding-bottom: 60px; margin-top: 60px;}
-.list-pro li{ position: relative; border-bottom: 1px solid #ddd; margin: 0px 3%; padding: 15px 0; overflow: hidden;}
+.list-pro{ overflow: hidden; padding-bottom: 60px; margin-top: 0px;}
+.list-pro li{ position: relative; border-bottom: 1px solid #ddd; margin: 0px 3%; padding: 10px 0; overflow: hidden;}
 .list-pic{ float: left; width: 30%;  padding: 3px; border: 1px solid #ddd;}
 .list-pro .am-gallery-desc { color: #cb2527; font-size: 1.6rem;}
 .list-cart{  height: 45px; text-align: center; position: absolute; right: 0px;  bottom: 0px;  border-radius: 50%;}
 .list-cart img{ margin-top: 8px;}
-.list-cart .d-stock{ width: 7.5rem; float: right;}
-.list-cart .d-stock .decrease{border-radius:50%; display: none; color: #666; float: left; border: 1px solid #dadada; width: 1.5rem; height: 1.5rem; line-height: 1.5rem; text-align: center;}
-.list-cart .d-stock .text_box{ display: none; float: left; border:0; width: 1.5rem; height: 1.5rem; line-height: 1.5rem; text-align: center; }
-.list-cart .d-stock .increase{border-radius:50%; font-size: 1.5rem; background: #39b867; color: #fff; float: right; /*border: 1px solid #dadada;*/ width: 1.5rem; height: 1.5rem; line-height: 1.5rem; text-align: center; margin-left:-1px;}
+.list-cart .d-stock{ width: 6.5rem; float: right;}
+.list-cart .d-stock .decrease{border-radius:50%; display: none; color: #666; float: left; border: 1px solid #dadada; width: 2rem; height: 2rem; line-height: 2rem; text-align: center;}
+.list-cart .d-stock .text_box{ display: none; float: left; border:0; width: 2rem; height: 2rem; line-height: 2rem; text-align: center; margin-left: 0.25rem;}
+.list-cart .d-stock .increase{border-radius:50%; font-size: 1.5rem; background: #39b867; color: #fff; float: right; /*border: 1px solid #dadada;*/ width: 2rem; height: 2rem; line-height: 2rem; text-align: center; margin-left:-1px;}
 .shop-list-mid .tit a{color: #909090; display: block; height: 20px;
     font-size: 1.4rem;
     display: -webkit-box;
@@ -38,7 +38,7 @@ ul{ padding: 0; margin: 0;}
     overflow: hidden;
     white-space:nowrap;
     text-overflow: ellipsis;}
-.fix-bot{ border-top: 1px solid #ddd; position: fixed; bottom: 0 ; height: 4.5rem; width: 100%; background: #fff; }
+.fix-bot{ border-top: 1px solid #ddd; position: fixed; bottom: 20px ; height: 4.5rem; width: 100%; background: #fff; }
 .fix-bot-cart{ float: left; margin-left: 3%; margin-top: -12px; width: 5rem; height: 5rem; background-size: contain;}
 .fix-bot-cart i{ width: 20px; height: 20px; text-align: center; float: right; color: #fff; font-style: normal; line-height: 20px; border-radius: 50%; background: #ffc618; display: block;}
 .shop-list-mid { float: left; width: 65%; margin-left: 0.625rem;}
@@ -58,14 +58,14 @@ ul{ padding: 0; margin: 0;}
 .list-js i{ color: red; font-style: normal; padding-left:5px;  font-weight: bold;}
 .list-js em{ font-style: normal; color: #666; }
 .num{ position: absolute; width: 20px; height: 20px; border-radius: 50%; background:red; color: #fff; text-align: center; line-height: 20px; font-style: normal; top: -5px; right: -16px;}
-/*.eat-list{ overflow:hidden;}*/
-/*.eat-list .name{ width: 20%;  float: left; height: 30px; line-height: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}*/
-/*.eat-list .price{ width: 15%; float: left; height: 30px; color: #999; line-height: 30px; font-style: normal;}*/
-/*.eat-list .d-stock{ width: 7.5rem; float: right;}*/
-/*.eat-list .d-stock .decrease{border-radius:50%; color: #666; float: left; border: 1px solid #dadada; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center;}*/
-/*.eat-list .d-stock .text_box{ float: left; border:0; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center; }*/
-/*.eat-list .d-stock .increase{border-radius:50%; background: #39b867; color: #fff; float: right; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center;}*/
-/*.eat-list li{ border-bottom: 1px solid #ddd; overflow: hidden; padding: 10px;}*/
+.eat-list{ overflow:hidden;}
+.eat-list .name{ width: 20%;  float: left; height: 30px; line-height: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.eat-list .price{ width: 15%; float: left; height: 30px; color: #999; line-height: 30px; font-style: normal;}
+.eat-list .d-stock{ width: 7.5rem; float: right;}
+.eat-list .d-stock .decrease{border-radius:50%; color: #666; float: left; border: 1px solid #dadada; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center;}
+.eat-list .d-stock .text_box{ float: left; border:0; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center; }
+.eat-list .d-stock .increase{border-radius:50%; background: #39b867; color: #fff; float: right; width: 2.5rem; height: 2.5rem; line-height: 2.5rem; text-align: center;}
+.eat-list li{ border-bottom: 1px solid #ddd; overflow: hidden; padding: 10px;}
 .juli{ height: 10px; background: #f5f5f5;}
 
 #datescroll div{float: left;margin-left: 10%;margin-top: 20px;padding-right: 22px;}

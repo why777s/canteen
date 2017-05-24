@@ -47,14 +47,26 @@
                     <div class="tab-pane active" contenteditable="false" id="panel-1">
                         <ul class="list-pro">
                         <s:iterator value="#request.first_windows" id="ff" status="st">
-                        <h5> <s:property value="#st.count"/> 号窗口:<s:property value="#ff.wname"/></h5>
+                            <h5 style="margin-left: 20px"><s:property value="#st.count"/> 号窗口:<s:property value="#ff.wname"/></h5>
                             <s:iterator value="#request.dishList" id="dd">
                                 <s:if test="#dd.wid==#ff.wid">
                                 <li>
-                                    <a href="#"><img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic"></a>
+                                    <a class="dishcm">
+                                        <img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic">
+                                    </a>
                                     <div class="shop-list-mid">
                                         <div class="tit"><a href="#"><s:property value="#dd.dname"/></a></div>
                                         <div class="am-gallery-desc"><s:property value="#dd.dprice"/>元</div>
+                                        <div class="dishcomment" style="display:none;">
+                                            <dt>
+                                                评论:
+                                            </dt>
+                                            <s:iterator value="#request.dish_commentList" id="dcl">
+                                                <s:if test="#dcl.did==#dd.did">
+                                                <dd><s:property value="#dcl.commentContent"/> </dd>
+                                                </s:if>
+                                            </s:iterator>
+                                        </dl></div>
                                     </div>
                                     <div class="list-cart">
                                         <div class="d-stock ">
@@ -70,36 +82,37 @@
                         </ul>
                     </div>
                             <%--二楼--%>
-                    <div class="tab-pane " contenteditable="false" id="panel-2">
-                        <ul class="list-pro">
-                            <s:iterator value="#request.second_windows" id="ff" status="st">
-                                <h5> <s:property value="#st.count"/> 号窗口:<s:property value="#ff.wname"/></h5>
-                                <s:iterator value="#request.dishList" id="dd">
-                                    <s:if test="#dd.wid==#ff.wid">
-                                        <li>
-                                            <a href="#"><img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic"></a>
-                                            <div class="shop-list-mid">
-                                                <div class="tit"><a href="#"><s:property value="#dd.dname"/></a></div>
-                                                <div class="am-gallery-desc"><s:property value="#dd.dprice"/>元</div>
-                                            </div>
-                                            <div class="list-cart">
-                                                <div class="d-stock ">
-                                                    <a class="decrease">-</a>
-                                                    <input id="num1" readonly="" class="text_box" name="" type="text" value="0">
-                                                    <a class="increase">+</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </s:if>
-                                </s:iterator>
-                            </s:iterator>
-                        </ul>
-                    </div>
+                    <%--<div class="tab-pane " contenteditable="false" id="panel-2">--%>
+                        <%--<ul class="list-pro">--%>
+                            <%--<s:iterator value="#request.second_windows" id="ff" status="st">--%>
+                                <%--<h5 style="margin-left: 20px"> <s:property value="#st.count"/> 号窗口:<s:property value="#ff.wname"/></h5>--%>
+                                <%--<s:iterator value="#request.dishList" id="dd">--%>
+                                    <%--<s:if test="#dd.wid==#ff.wid">--%>
+                                        <%--<li>--%>
+                                            <%--<a href="#"><img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic"></a>--%>
+                                            <%--<div class="shop-list-mid">--%>
+                                                <%--<div class="tit"><a href="#"><s:property value="#dd.dname"/></a></div>--%>
+                                                <%--<div class="am-gallery-desc"><s:property value="#dd.dprice"/>元</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="list-cart">--%>
+                                                <%--<div class="d-stock ">--%>
+                                                    <%--<a class="decrease">-</a>--%>
+                                                    <%--<input id="num1" readonly="" class="text_box" name="" type="text" value="0">--%>
+                                                    <%--<a class="increase">+</a>--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                        <%--</li>--%>
+                                    <%--</s:if>--%>
+                                <%--</s:iterator>--%>
+                            <%--</s:iterator>--%>
+                        <%--</ul>--%>
+                    <%--</div>--%>
+
                 </div>
             </div>
         </div>
     </div>
-    <%--不能响应布局，会乱！--%>
+
     <%--<div class="fix-bot">--%>
         <%--<a href="" class="list-js">合计：<i>0元</i><em>(0份)</em></a>--%>
         <%--<a href="" class="list-jsk">选好了</a>--%>
@@ -133,6 +146,10 @@ $(document).ready(function(){
             self.siblings('input').val(current_num);
 //            update_item(self.siblings('input').data('item-id'));
         }
+    })
+    $(".dishcm").click(function () {
+        var self=$(this);
+        self.siblings('.shop-list-mid').children('.dishcomment').fadeToggle();
     })
 });
 </script>

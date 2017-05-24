@@ -16,11 +16,14 @@ public class StudentAction extends ActionSupport {
     private StudentServiceImpl studentService;
     public void setStudentService(StudentServiceImpl studentService) {this.studentService = studentService;}
     public StudentServiceImpl getStudentService() {return studentService;}
-    //视图变量
+    //视图接收变量
+    private int dishInfo_did;
+    //视图显示变量
     //订单
     private List<OrderStu> orderstuList;
     //评论
     private List<Comment> commentList;
+    private List<Comment> dish_commentList;
     //菜单
     private List<Dish> dishList;
     private List<Floor> floorList;
@@ -40,7 +43,6 @@ public class StudentAction extends ActionSupport {
     public void setDishList(List<Dish> dishList) {this.dishList = dishList;}
     public List<Floor> getFloorList() {return floorList;}
     public void setFloorList(List<Floor> floorList) {this.floorList = floorList;}
-
     public List<Window> getFirst_windows() {
         return first_windows;
     }
@@ -56,6 +58,11 @@ public class StudentAction extends ActionSupport {
     public int getDishsize() {return dishsize;}
     public void setDishsize(int dishsize) {this.dishsize = dishsize;}
 
+    public int getDishInfo_did() {return dishInfo_did;}
+    public void setDishInfo_did(int dishInfo_did) {this.dishInfo_did = dishInfo_did;}
+    public List<Comment> getDish_commentList() {return dish_commentList;}
+    public void setDish_commentList(List<Comment> dish_commentList) {this.dish_commentList = dish_commentList;}
+
     // 从Session中获取当前登录用户的id
     public String getUserFromSession(){
         HttpSession session = ServletActionContext.getRequest().getSession();
@@ -67,6 +74,12 @@ public class StudentAction extends ActionSupport {
         floorList = studentService.getAllFloor();
         dishList = studentService.getAllDishes();
         dishsize=dishList.size();
+
+        dish_commentList=studentService.getAllDishComment();
+        for (Comment cm:dish_commentList) {
+                System.out.print("评论："+cm.getCommentContent()+"\n");
+        }
+
         try{
             first_windows = studentService.getWindowByFloorId(floorList.get(0).getFid());
             second_windows = studentService.getWindowByFloorId(floorList.get(1).getFid());
@@ -90,8 +103,7 @@ public class StudentAction extends ActionSupport {
         return SUCCESS;
     }
 
-
-    //查看评论
+    //查看自己评论
     public String turnCommentInfo() throws Exception{
         String sid=getUserFromSession();
         try{
@@ -102,4 +114,20 @@ public class StudentAction extends ActionSupport {
         }
         return SUCCESS;
     }
+
+    //查看菜品的评论
+//    public String DishComment() throws Exception{
+//        try{
+//            dish_commentList=studentService.getDishComment(dishInfo_did);
+//            for (Comment cm:dish_commentList) {
+//                System.out.print("评论："+cm.getCommentContent()+"\n");
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return ERROR;
+//        }
+//        return SUCCESS;
+//    }
+
+
 }

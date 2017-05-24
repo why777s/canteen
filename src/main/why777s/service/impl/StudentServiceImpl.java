@@ -60,19 +60,23 @@ public class StudentServiceImpl implements StudentService {
                 " where sid = ?";
         return commentDao.find_withOnePara(hql,sid);
     }
+    //查菜品评论
+    @Transactional
+    public List<Comment> getDishComment(int did){
+        String hql="from Comment"+
+                " where did = ?";
+        return commentDao.find_withOnePara_Int(hql,did);
+    }
 
     //查餐品
     @Transactional
     public List<Canteen> getAllCanteen(){return canteenDao.findall(Canteen.class);}
-
     @Transactional
     public List<Window> getWindowByFloorId(String fid) {
         String hql = "from Window " +
                 "where fid=?";
         return windowDao.find_withOnePara(hql,fid);
     }
-
-    //在jsp等值显示还是查询时就限制？
     @Transactional
     public List<Dish> getAllDishes() {
         return dishDao.findall(Dish.class);
@@ -81,5 +85,7 @@ public class StudentServiceImpl implements StudentService {
     public List<Floor> getAllFloor(){
         return floorDao.findall(Floor.class);
     }
+    @Transactional
+    public List<Comment> getAllDishComment(){return commentDao.findall(Comment.class);}
 
 }
