@@ -18,7 +18,6 @@ public class DishOrder {
     public int getOid() {
         return oid;
     }
-
     public void setOid(int oid) {
         this.oid = oid;
     }
@@ -28,7 +27,6 @@ public class DishOrder {
     public int getDid() {
         return did;
     }
-
     public void setDid(int did) {
         this.did = did;
     }
@@ -38,7 +36,6 @@ public class DishOrder {
     public Integer getDnum() {
         return dnum;
     }
-
     public void setDnum(Integer dnum) {
         this.dnum = dnum;
     }

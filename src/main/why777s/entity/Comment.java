@@ -10,13 +10,15 @@ import java.sql.Date;
 public class Comment {
     private int commentId;
     private String commentContent;
-    private Date commentTime;
+    private String commentTime;
 
     private int did;
     private String sid;
     private Dish dishByDid;
     private Student studentBySid;
 
+    public Comment() {
+    }
 
     @Id
     @Column(name = "comment_id", nullable = false)
@@ -45,11 +47,9 @@ public class Comment {
     }
 
     @Basic
-    @Column(name = "comment_time", nullable = false)
-    public Date getCommentTime() {
-        return commentTime;
-    }
-    public void setCommentTime(Date commentTime) {
+    @Column(name = "comment_time")
+    public String getCommentTime() {return commentTime;}
+    public void setCommentTime(String commentTime) {
         this.commentTime = commentTime;
     }
 

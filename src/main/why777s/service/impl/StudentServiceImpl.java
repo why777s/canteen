@@ -60,12 +60,10 @@ public class StudentServiceImpl implements StudentService {
                 " where sid = ?";
         return commentDao.find_withOnePara(hql,sid);
     }
-    //查菜品评论
+    //点评
     @Transactional
-    public List<Comment> getDishComment(int did){
-        String hql="from Comment"+
-                " where did = ?";
-        return commentDao.find_withOnePara_Int(hql,did);
+    public void saveComment(Comment comment){
+        commentDao.save(comment);
     }
 
     //查餐品

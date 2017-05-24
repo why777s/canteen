@@ -55,18 +55,34 @@
                                         <img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic">
                                     </a>
                                     <div class="shop-list-mid">
-                                        <div class="tit"><a href="#"><s:property value="#dd.dname"/></a></div>
+                                        <%--简介区--%>
+                                        <div class="tit"><a><s:property value="#dd.dname"/></a></div>
                                         <div class="am-gallery-desc"><s:property value="#dd.dprice"/>元</div>
-                                        <div class="dishcomment" style="display:none;">
-                                            <dt>
-                                                评论:
-                                            </dt>
+
+                                        <%--评论查看区--%>
+                                        <div class="dishcomment" style="display:none;margin-top: 5px;"><dl>
+                                            <h5>评论:</h5>
                                             <s:iterator value="#request.dish_commentList" id="dcl">
                                                 <s:if test="#dcl.did==#dd.did">
+                                                <dt>用户:<s:property value="#dcl.studentBySid.sname"/></dt>
                                                 <dd><s:property value="#dcl.commentContent"/> </dd>
                                                 </s:if>
                                             </s:iterator>
                                         </dl></div>
+
+                                        <%--点评区--%>
+                                        <div>
+                                            <a class="comment">我要吐槽！</a>
+                                            <div class="dianping"  style="display: none;">
+                                                <s:form action="stu_savecomment" theme="simple" method="POST">
+                                                    <%--<s:textarea name="content"/>--%>
+                                                    <textarea name="content" rows="5" cols="20"></textarea>
+                                                    <s:hidden name="cmt_did" value="%{did}"/>
+                                                    <%--<button class="btn btn-success" class="comment" type="submit">点评</button>--%>
+                                                </s:form>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="list-cart">
                                         <div class="d-stock ">
@@ -81,7 +97,7 @@
                         </s:iterator>
                         </ul>
                     </div>
-                            <%--二楼--%>
+                            <%--&lt;%&ndash;二楼&ndash;%&gt;--%>
                     <%--<div class="tab-pane " contenteditable="false" id="panel-2">--%>
                         <%--<ul class="list-pro">--%>
                             <%--<s:iterator value="#request.second_windows" id="ff" status="st">--%>
@@ -89,11 +105,23 @@
                                 <%--<s:iterator value="#request.dishList" id="dd">--%>
                                     <%--<s:if test="#dd.wid==#ff.wid">--%>
                                         <%--<li>--%>
-                                            <%--<a href="#"><img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic"></a>--%>
+                                            <%--<a class="dishcm"><img src="<%=basePath%>/bootstrap/img/images/<s:property value="#dd.did"/>.png" class="list-pic"></a>--%>
                                             <%--<div class="shop-list-mid">--%>
-                                                <%--<div class="tit"><a href="#"><s:property value="#dd.dname"/></a></div>--%>
+                                                <%--<div class="tit"><a><s:property value="#dd.dname"/></a></div>--%>
                                                 <%--<div class="am-gallery-desc"><s:property value="#dd.dprice"/>元</div>--%>
                                             <%--</div>--%>
+                                            <%--&lt;%&ndash;评论区&ndash;%&gt;--%>
+                                            <%--<div class="dishcomment" style="display:none;margin-top: 5px;"><dl>--%>
+                                                <%--<dt>--%>
+                                                    <%--评论:--%>
+                                                <%--</dt>--%>
+                                                <%--<s:iterator value="#request.dish_commentList" id="dcl">--%>
+                                                    <%--<s:if test="#dcl.did==#dd.did">--%>
+                                                        <%--<dt>用户:<s:property value="#dcl.studentBySid.sname"/></dt>--%>
+                                                        <%--<dd><s:property value="#dcl.commentContent"/> </dd>--%>
+                                                    <%--</s:if>--%>
+                                                <%--</s:iterator>--%>
+                                            <%--</dl></div>--%>
                                             <%--<div class="list-cart">--%>
                                                 <%--<div class="d-stock ">--%>
                                                     <%--<a class="decrease">-</a>--%>
@@ -118,11 +146,21 @@
         <%--<a href="" class="list-jsk">选好了</a>--%>
     <%--</div>--%>
 
-
+    <%--js调试信息输出位置--%>
+    <script type="text/javascript">
+        function __js_debug_msg() {
+            var mydiv = document.createElement('div');
+            mydiv.id = "js_debug_msg";
+            mydiv.setAttribute('style','position:fixed;width:300px;height:40px;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');
+            mydiv.innerHTML="print js debug message.";
+            document.body.appendChild(mydiv);
+        }
+        __js_debug_msg();
+    </script>
     <%--js--%>
 <script>
-    <%--数量增减--%>
 $(document).ready(function(){
+    //数量增减
     $('.increase').click(function(){
         var self = $(this);
         var current_num = parseInt(self.siblings('input').val());
@@ -132,8 +170,7 @@ $(document).ready(function(){
             self.siblings(".text_box").fadeIn();
         }
         self.siblings('input').val(current_num);
-//        update_item(self.siblings('input').data('item-id'));
-    })
+    });
     $('.decrease').click(function(){
         var self = $(this);
         var current_num = parseInt(self.siblings('input').val());
@@ -144,14 +181,31 @@ $(document).ready(function(){
                 self.siblings(".text_box").fadeOut();
             }
             self.siblings('input').val(current_num);
-//            update_item(self.siblings('input').data('item-id'));
         }
-    })
+    });
+    //评论查看显示
     $(".dishcm").click(function () {
         var self=$(this);
         self.siblings('.shop-list-mid').children('.dishcomment').fadeToggle();
-    })
+    });
+
+    $(".comment").click(function (){
+        var self=$(this);
+        var dianping=self.siblings('.dianping');
+        var form=dianping.children("form");
+        $("#js_debug_msg").innerHTML="有点击";
+        if(form.children("textarea").val()!="") {
+            form.submit();
+            $("#js_debug_msg").innerHTML = "haha";
+            dianping.fadeIn();
+        }else{
+            dianping.fadeToggle();
+        }
+    });
 });
+//点评
+
+
 </script>
 </body>
 </html>

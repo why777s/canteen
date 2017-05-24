@@ -6,6 +6,8 @@ import org.apache.struts2.ServletActionContext;
 import service.impl.StudentServiceImpl;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +19,9 @@ public class StudentAction extends ActionSupport {
     public void setStudentService(StudentServiceImpl studentService) {this.studentService = studentService;}
     public StudentServiceImpl getStudentService() {return studentService;}
     //视图接收变量
-    private int dishInfo_did;
+//    private Comment comment;
+    private String content;
+    private int cmt_did;
     //视图显示变量
     //订单
     private List<OrderStu> orderstuList;
@@ -57,11 +61,25 @@ public class StudentAction extends ActionSupport {
     }
     public int getDishsize() {return dishsize;}
     public void setDishsize(int dishsize) {this.dishsize = dishsize;}
-
-    public int getDishInfo_did() {return dishInfo_did;}
-    public void setDishInfo_did(int dishInfo_did) {this.dishInfo_did = dishInfo_did;}
     public List<Comment> getDish_commentList() {return dish_commentList;}
     public void setDish_commentList(List<Comment> dish_commentList) {this.dish_commentList = dish_commentList;}
+//    public Comment getComment() {return comment;}
+//    public void setComment(Comment comment) {this.comment = comment;}
+
+
+    public String getContent() {
+        return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getCmt_did() {
+        return cmt_did;
+    }
+    public void setCmt_did(int cmt_did) {
+        this.cmt_did = cmt_did;
+    }
 
     // 从Session中获取当前登录用户的id
     public String getUserFromSession(){
@@ -74,12 +92,8 @@ public class StudentAction extends ActionSupport {
         floorList = studentService.getAllFloor();
         dishList = studentService.getAllDishes();
         dishsize=dishList.size();
-
+        //菜品评论
         dish_commentList=studentService.getAllDishComment();
-        for (Comment cm:dish_commentList) {
-                System.out.print("评论："+cm.getCommentContent()+"\n");
-        }
-
         try{
             first_windows = studentService.getWindowByFloorId(floorList.get(0).getFid());
             second_windows = studentService.getWindowByFloorId(floorList.get(1).getFid());
@@ -115,19 +129,25 @@ public class StudentAction extends ActionSupport {
         return SUCCESS;
     }
 
-    //查看菜品的评论
-//    public String DishComment() throws Exception{
-//        try{
-//            dish_commentList=studentService.getDishComment(dishInfo_did);
-//            for (Comment cm:dish_commentList) {
-//                System.out.print("评论："+cm.getCommentContent()+"\n");
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            return ERROR;
-//        }
-//        return SUCCESS;
-//    }
-
+    public String saveComment() throws Exception{
+        if(!getContent().equals("")) {
+            Comment comment = new Comment();
+            comment.setDid(getCmt_did());
+            comment.setCommentContent(getContent());
+            String sid = getUserFromSession();
+            comment.setSid(sid);
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+            System.out.println("评论时间：" + df.format(new Date()));// new Date()为获取当前系统时间
+//            comment.setCommentTime(new Date());
+            try {
+                studentService.saveComment(comment);
+                dish_commentList=studentService.getAllDishComment();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return ERROR;
+            }
+        }
+        return SUCCESS;
+    }
 
 }

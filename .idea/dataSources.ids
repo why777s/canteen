@@ -77,7 +77,6 @@
         <data-type>varchar(45)</data-type>
       </column>
       <column id="26" parent="4" name="comment_time">
-        <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <index id="27" parent="4" name="comment_did">
@@ -238,7 +237,6 @@ oid</columns>
         <data-type>varchar(45)</data-type>
       </column>
       <column id="62" parent="9" name="order_time">
-        <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <column id="63" parent="9" name="oprice">

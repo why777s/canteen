@@ -22,17 +22,15 @@ public class OrderStu {
     public int getOid() {
         return oid;
     }
-
     public void setOid(int oid) {
         this.oid = oid;
     }
 
     @Basic
-    @Column(name = "order_time", nullable = false)
+    @Column(name = "order_time")
     public Date getOrderTime() {
         return orderTime;
     }
-
     public void setOrderTime(Date orderTime) {
         this.orderTime = orderTime;
     }
@@ -42,7 +40,6 @@ public class OrderStu {
     public Double getOprice() {
         return oprice;
     }
-
     public void setOprice(Double oprice) {
         this.oprice = oprice;
     }
