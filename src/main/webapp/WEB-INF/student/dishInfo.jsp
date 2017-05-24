@@ -86,14 +86,14 @@
                                     </div>
                                     <div class="list-cart">
                                         <div class="d-stock ">
-                                            <%--下单用数据--%>
-                                            <s:form class="orderdish" action="" theme="simple" method="POST">
-                                                <s:hidden name="" value="%{did}" />
-                                                <s:hidden name="" value="%{dname}" />
-                                            </s:form>
                                             <a class="decrease">-</a>
                                             <input id="num" readonly="" class="text_box" name="" type="text" value="0">
                                             <a class="increase">+</a>
+                                            <%--下单用数据--%>
+                                            <div class="orderdish" style="display: none;">
+                                                    <s:hidden class="or_did" value="%{did}" />
+                                                    <s:hidden class="or_dname" value="%{dname}" />
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -153,11 +153,11 @@
 
     <%--js调试信息输出位置--%>
     <script type="text/javascript">
-        function oder_msg() {
+        function order_msg() {
             var orderdiv = document.createElement('div');
             orderdiv.id = "orderdiv";
             orderdiv.setAttribute('style','position:fixed;width:300px;height:auto;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');
-            orderdiv.innerHTML="print js debug message.";
+            orderdiv.innerHTML="Dish List:";
             document.body.appendChild(orderdiv);
         }
         order_msg();
@@ -172,24 +172,34 @@ $(document).ready(function(){
     $('.increase').click(function(){
         var self = $(this);
         var orderdish=self.siblings(".orderdish");
+        var did=orderdish.children(".or_did").val();
+        var dname=orderdish.children(".or_dname").val();
         var current_num = parseInt(self.siblings('input').val());
         current_num += 1;
         if(current_num>0){
             self.siblings(".decrease").fadeIn();
             self.siblings(".text_box").fadeIn();
             //显示在订单中
-            orderdiv.appendChild()
+            orderdiv.find("."+did).remove();
+            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
         }
         self.siblings('input').val(current_num);
     });
     $('.decrease').click(function(){
         var self = $(this);
+        var orderdish=self.siblings(".orderdish");
+        var did=orderdish.children(".or_did").val();
+        var dname=orderdish.children(".or_dname").val();
         var current_num = parseInt(self.siblings('input').val());
         if(current_num > 0){
             current_num -= 1;
+            //显示在订单中
+            orderdiv.find("."+did).remove();
+            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
             if(current_num < 1){
                 self.fadeOut();
                 self.siblings(".text_box").fadeOut();
+                orderdiv.find("."+did).remove();
             }
             self.siblings('input').val(current_num);
         }

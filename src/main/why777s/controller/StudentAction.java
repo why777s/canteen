@@ -137,8 +137,7 @@ public class StudentAction extends ActionSupport {
             String sid = getUserFromSession();
             comment.setSid(sid);
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-            System.out.println("评论时间：" + df.format(new Date()));// new Date()为获取当前系统时间
-//            comment.setCommentTime(new Date());
+            comment.setCommentTime(df.format(new Date()));
             try {
                 studentService.saveComment(comment);
                 dish_commentList=studentService.getAllDishComment();

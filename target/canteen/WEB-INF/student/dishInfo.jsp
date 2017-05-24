@@ -89,6 +89,11 @@
                                             <a class="decrease">-</a>
                                             <input id="num" readonly="" class="text_box" name="" type="text" value="0">
                                             <a class="increase">+</a>
+                                            <%--下单用数据--%>
+                                            <div class="orderdish" style="display: none;">
+                                                    <s:hidden class="or_did" value="%{did}" />
+                                                    <s:hidden class="or_dname" value="%{dname}" />
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -148,37 +153,53 @@
 
     <%--js调试信息输出位置--%>
     <script type="text/javascript">
-        function __js_debug_msg() {
-            var mydiv = document.createElement('div');
-            mydiv.id = "js_debug_msg";
-            mydiv.setAttribute('style','position:fixed;width:300px;height:40px;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');
-            mydiv.innerHTML="print js debug message.";
-            document.body.appendChild(mydiv);
+        function order_msg() {
+            var orderdiv = document.createElement('div');
+            orderdiv.id = "orderdiv";
+            orderdiv.setAttribute('style','position:fixed;width:300px;height:auto;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');
+            orderdiv.innerHTML="Dish List";
+            document.body.appendChild(orderdiv);
         }
-        __js_debug_msg();
+        order_msg();
     </script>
     <%--js--%>
 <script>
 $(document).ready(function(){
+    var price_sum;
+    var num_sum;
+    var orderdiv=$("#orderdiv");
     //数量增减
     $('.increase').click(function(){
         var self = $(this);
+        var orderdish=self.siblings(".orderdish");
+        var did=orderdish.children(".or_did").val();
+        var dname=orderdish.children(".or_dname").val();
         var current_num = parseInt(self.siblings('input').val());
         current_num += 1;
         if(current_num>0){
             self.siblings(".decrease").fadeIn();
             self.siblings(".text_box").fadeIn();
+            //显示在订单中
+            orderdiv.find("."+did).remove();
+            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
         }
         self.siblings('input').val(current_num);
     });
     $('.decrease').click(function(){
         var self = $(this);
+        var orderdish=self.siblings(".orderdish");
+        var did=orderdish.children(".or_did").val();
+        var dname=orderdish.children(".or_dname").val();
         var current_num = parseInt(self.siblings('input').val());
         if(current_num > 0){
             current_num -= 1;
+            //显示在订单中
+            orderdiv.find("."+did).remove();
+            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
             if(current_num < 1){
                 self.fadeOut();
                 self.siblings(".text_box").fadeOut();
+                orderdiv.find("."+did).remove();
             }
             self.siblings('input').val(current_num);
         }
@@ -188,22 +209,19 @@ $(document).ready(function(){
         var self=$(this);
         self.siblings('.shop-list-mid').children('.dishcomment').fadeToggle();
     });
-
+    //点评
     $(".comment").click(function (){
         var self=$(this);
         var dianping=self.siblings('.dianping');
         var form=dianping.children("form");
-        $("#js_debug_msg").innerHTML="有点击";
         if(form.children("textarea").val()!="") {
             form.submit();
-            $("#js_debug_msg").innerHTML = "haha";
-            dianping.fadeIn();
         }else{
             dianping.fadeToggle();
         }
     });
 });
-//点评
+
 
 
 </script>

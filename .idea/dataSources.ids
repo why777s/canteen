@@ -77,7 +77,7 @@
         <data-type>varchar(45)</data-type>
       </column>
       <column id="26" parent="4" name="comment_time">
-        <data-type>date</data-type>
+        <data-type>varchar(45)</data-type>
       </column>
       <index id="27" parent="4" name="comment_did">
         <columns>did</columns>
