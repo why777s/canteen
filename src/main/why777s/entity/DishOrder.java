@@ -12,6 +12,11 @@ public class DishOrder {
     private int oid;
     private int did;
     private Integer dnum;
+    //
+    private Dish dishByDid;
+    private OrderStu orderStuByOid;
+
+    public DishOrder() {}
 
     @Id
     @Column(name = "oid", nullable = false)
@@ -61,4 +66,14 @@ public class DishOrder {
         result = 31 * result + (dnum != null ? dnum.hashCode() : 0);
         return result;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "did",referencedColumnName = "did",nullable = false,insertable = false,updatable = false)
+    public Dish getDishByDid() {return dishByDid;}
+    public void setDishByDid(Dish dishByDid) {this.dishByDid = dishByDid;}
+
+    @ManyToOne
+    @JoinColumn(name = "oid",referencedColumnName = "oid",nullable = false,insertable = false,updatable = false)
+    public OrderStu getOrderStuByOid() {return orderStuByOid;}
+    public void setOrderStuByOid(OrderStu orderStuByOid) {this.orderStuByOid = orderStuByOid;}
 }

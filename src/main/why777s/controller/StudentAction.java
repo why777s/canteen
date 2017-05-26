@@ -18,13 +18,17 @@ public class StudentAction extends ActionSupport {
     private StudentServiceImpl studentService;
     public void setStudentService(StudentServiceImpl studentService) {this.studentService = studentService;}
     public StudentServiceImpl getStudentService() {return studentService;}
-    //视图接收变量
-//    private Comment comment;
+//视图接收变量
+    //点评
     private String content;
     private int cmt_did;
-    //视图显示变量
+    //下单
+    private OrderStu orderStu;
+    private List<DishOrder> dishOrderList;
+//视图显示变量
     //订单
     private List<OrderStu> orderstuList;
+    private List<DishOrder> dishOrderList_look;
     //评论
     private List<Comment> commentList;
     private List<Comment> dish_commentList;
@@ -63,23 +67,34 @@ public class StudentAction extends ActionSupport {
     public void setDishsize(int dishsize) {this.dishsize = dishsize;}
     public List<Comment> getDish_commentList() {return dish_commentList;}
     public void setDish_commentList(List<Comment> dish_commentList) {this.dish_commentList = dish_commentList;}
-//    public Comment getComment() {return comment;}
-//    public void setComment(Comment comment) {this.comment = comment;}
-
-
     public String getContent() {
         return content;
     }
     public void setContent(String content) {
         this.content = content;
     }
-
     public int getCmt_did() {
         return cmt_did;
     }
     public void setCmt_did(int cmt_did) {
         this.cmt_did = cmt_did;
     }
+    //下单
+    public OrderStu getOrderStu() {
+        return orderStu;
+    }
+    public void setOrderStu(OrderStu orderStu) {
+        this.orderStu = orderStu;
+    }
+    public List<DishOrder> getDishOrderList() {
+        return dishOrderList;
+    }
+    public void setDishOrderList(List<DishOrder> dishOrderList) {
+        this.dishOrderList = dishOrderList;
+    }
+    //查单
+    public List<DishOrder> getDishOrderList_look() {return dishOrderList_look;}
+    public void setDishOrderList_look(List<DishOrder> dishOrderList_look) {this.dishOrderList_look = dishOrderList_look;}
 
     // 从Session中获取当前登录用户的id
     public String getUserFromSession(){
@@ -95,6 +110,7 @@ public class StudentAction extends ActionSupport {
         //菜品评论
         dish_commentList=studentService.getAllDishComment();
         try{
+            //用循环控制tab切换？
             first_windows = studentService.getWindowByFloorId(floorList.get(0).getFid());
             second_windows = studentService.getWindowByFloorId(floorList.get(1).getFid());
         }catch (Exception e){
@@ -107,9 +123,10 @@ public class StudentAction extends ActionSupport {
     //查看订单
     public String turnOrderInfo() throws Exception{
         String sid=getUserFromSession();
-        Student stu=studentService.getStu(sid);
+//        Student stu=studentService.getStu(sid);
         try{
             orderstuList =studentService.getOrderStu(sid);
+            dishOrderList_look=studentService.getAllDishOrder();
         } catch (Exception e){
             e.printStackTrace();
             return ERROR;
@@ -129,15 +146,14 @@ public class StudentAction extends ActionSupport {
         return SUCCESS;
     }
 
+    //点评
     public String saveComment() throws Exception{
         if(!getContent().equals("")) {
             Comment comment = new Comment();
             comment.setDid(getCmt_did());
             comment.setCommentContent(getContent());
-            String sid = getUserFromSession();
-            comment.setSid(sid);
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-            comment.setCommentTime(df.format(new Date()));
+            comment.setSid(getUserFromSession());
+            comment.setCommentTime(new java.sql.Date(new Date().getTime()));
             try {
                 studentService.saveComment(comment);
                 dish_commentList=studentService.getAllDishComment();
@@ -145,6 +161,28 @@ public class StudentAction extends ActionSupport {
                 e.printStackTrace();
                 return ERROR;
             }
+        }
+        return SUCCESS;
+    }
+
+    //下单
+    public String saveOrder() throws Exception{
+        //set:sid,order_tiem,oprice,order_status
+        orderStu.setSid(getUserFromSession());
+        orderStu.setOrderTime(new java.sql.Date(new Date().getTime()));
+        orderStu.setOrderStatus("NEW");
+        //下单号
+        int oid=studentService.getAllOrderStu().size()+1;
+        System.out.print("下单号："+oid+"\n");
+        //set:oid,did,dnum
+        for (DishOrder dishorder:dishOrderList) {
+            dishorder.setOid(oid);
+        }
+        try{
+            studentService.saveOrder(orderStu,dishOrderList);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
         }
         return SUCCESS;
     }

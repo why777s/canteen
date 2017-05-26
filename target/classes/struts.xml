@@ -73,7 +73,11 @@
             <result name="success">/WEB-INF/student/dishInfo.jsp</result>
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
-
+        <!--下单-->
+        <action name="stu_saveorder" class="studentAction" method="saveOrder">
+            <result name="success">/WEB-INF/student/dishInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
     </package>
 
 

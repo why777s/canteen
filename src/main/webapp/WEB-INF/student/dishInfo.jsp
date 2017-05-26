@@ -91,8 +91,9 @@
                                             <a class="increase">+</a>
                                             <%--下单用数据--%>
                                             <div class="orderdish" style="display: none;">
-                                                    <s:hidden class="or_did" value="%{did}" />
-                                                    <s:hidden class="or_dname" value="%{dname}" />
+                                                <s:hidden class="or_did" value="%{did}" />
+                                                <s:hidden class="or_dname" value="%{dname}" />
+                                                <s:hidden class="or_dprice" value="%{dprice}" />
                                             </div>
                                         </div>
                                     </div>
@@ -146,62 +147,98 @@
         </div>
     </div>
 
-    <%--<div class="fix-bot">--%>
-        <%--<a href="" class="list-js">合计：<i>0元</i><em>(0份)</em></a>--%>
-        <%--<a href="" class="list-jsk">选好了</a>--%>
-    <%--</div>--%>
+    <div id="orderdiv" style="position:fixed;width:300px;height:auto;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;">
+        <span>Dish List:</span>
+        <button class="btn btn-success" style="float: right" id="senddishorderlist">下单</button>
+        <form id="orderaction" action="stu_saveorder" method="POST">
+            <%--<div class="did"><hr/><span>dname</span>--%>
+            <%--<input class="dnum" name="dishOrderList[0].dnum" value="dnum"><input type="hidden" name="dishOrderList[0].did" value="did">--%>
+            <%--</div>--%>
+            <%--<hr/><span>dname</span>--%>
+            <%--<input name="dishOrderList[1].dnum" value="2"><input type="hidden" name="dishOrderList[1].did" value="3">--%>
 
-    <%--js调试信息输出位置--%>
-    <script type="text/javascript">
-        function order_msg() {
-            var orderdiv = document.createElement('div');
-            orderdiv.id = "orderdiv";
-            orderdiv.setAttribute('style','position:fixed;width:300px;height:auto;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');
-            orderdiv.innerHTML="Dish List:";
-            document.body.appendChild(orderdiv);
-        }
-        order_msg();
-    </script>
+            <%--&lt;%&ndash;<s:textfield cssStyle="width:50px" maxlength="4" label="总价" name="orderStu.oprice" value="55"/>&ndash;%&gt;--%>
+            <hr/><span>总价：</span>
+            <input class="priceinput" readonly="true" name="orderStu.oprice" value="0">
+        </form>
+    </div>
+
+    <%--<script type="text/javascript">--%>
+        <%--function order_msg() {--%>
+            <%--var orderdiv = document.createElement('div');--%>
+            <%--orderdiv.id = "orderdiv";--%>
+            <%--orderdiv.setAttribute('style','position:fixed;width:300px;height:auto;padding:5px;background:#333;line-height:20px;color:#FFF;margin-top:0px;top:0px;right:0px;');--%>
+            <%--orderdiv.innerHTML="Dish List:";--%>
+            <%--document.body.appendChild(orderdiv);--%>
+        <%--}--%>
+        <%--order_msg();--%>
+    <%--</script>--%>
     <%--js--%>
 <script>
+
+function appendOrder(orderaction,did,dname,dnum,orderstu_num) {
+    var txt1="<div id='"+did+"'><hr/><span>"+dname+"</span>";
+    var txt2="<input type='text' class='dnuminput' name=\"dishOrderList["+orderstu_num+"].dnum\" value=\""+dnum+"\">";
+    var txt3="<input type='hidden' class='didinput' name=\"dishOrderList["+orderstu_num+"].did\" value=\""+did+"\"></div>";
+    orderaction.append(txt1,txt2,txt3);
+};
+
 $(document).ready(function(){
-    var price_sum;
-    var num_sum;
+    var orderstu_price=0;
+    var orderstu_num=0;
     var orderdiv=$("#orderdiv");
-    //数量增减
+    var orderaction=$("#orderaction");
+    var priceinput=orderaction.children(".priceinput");
+//    priceinput.setAttribute("style","width:20px;");
+
+    <%--//数量增减--%>
     $('.increase').click(function(){
         var self = $(this);
         var orderdish=self.siblings(".orderdish");
         var did=orderdish.children(".or_did").val();
         var dname=orderdish.children(".or_dname").val();
-        var current_num = parseInt(self.siblings('input').val());
-        current_num += 1;
-        if(current_num>0){
+        var dprice=orderdish.children(".or_dprice").val();
+        var dnum = parseInt(self.siblings('input').val());
+        dnum += 1;
+
+        var inputdiv=orderaction.children("#"+did);
+        if(dnum>0){
             self.siblings(".decrease").fadeIn();
             self.siblings(".text_box").fadeIn();
-            //显示在订单中
-            orderdiv.find("."+did).remove();
-            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
+            if(dnum==1){
+                appendOrder(orderaction,did,dname,dnum,orderstu_num);
+                orderstu_num+=1;
+            }else{
+                inputdiv.children(".dnuminput").val(dnum);
+                inputdiv.children(".didinput").val(dnum);
+                priceinput.val(dnum);
+            }
         }
-        self.siblings('input').val(current_num);
+//        orderstu_price+=parseInt(dprice);
+//        priceinput.val(orderstu_price);
+        self.siblings('input').val(dnum);
+
     });
     $('.decrease').click(function(){
         var self = $(this);
         var orderdish=self.siblings(".orderdish");
         var did=orderdish.children(".or_did").val();
         var dname=orderdish.children(".or_dname").val();
-        var current_num = parseInt(self.siblings('input').val());
-        if(current_num > 0){
-            current_num -= 1;
+        var dprice=orderdish.children(".or_dprice").val();
+        var dnum = parseInt(self.siblings('input').val());
+        if(dnum > 0){
+            dnum -= 1;
             //显示在订单中
-            orderdiv.find("."+did).remove();
-            orderdiv.append("<p class=\""+ did + "\">"+dname+","+current_num+"</p>");
-            if(current_num < 1){
+//            orderdiv.find("."+did).remove();
+//            orderdiv.append("<p class=\""+ did + "\">"+dname+"("+dprice+"元)"+"*"+dnum+"</p>");
+            if(dnum < 1){
                 self.fadeOut();
                 self.siblings(".text_box").fadeOut();
-                orderdiv.find("."+did).remove();
+
             }
-            self.siblings('input').val(current_num);
+            orderstu_price-=parseInt(dprice);
+            priceinput.val(orderstu_price);
+            self.siblings('input').val(dnum);
         }
     });
     //评论查看显示
@@ -220,11 +257,16 @@ $(document).ready(function(){
             dianping.fadeToggle();
         }
     });
+
+    $("#senddishorderlist").click(function () {
+        var self = $(this);
+        var form=self.siblings("form");
+        form.submit();
+    });
 });
 
-
-
 </script>
+
 </body>
 </html>
 

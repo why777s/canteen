@@ -11,11 +11,13 @@ import java.sql.Date;
 public class OrderStu {
     private int oid;
     private Date orderTime;
+    private String sid;
     private Double oprice;
     private String orderStatus;
-
-
+    //
     private Student studentBySid;
+
+    public OrderStu() {}
 
     @Id
     @Column(name = "oid", nullable = false)
@@ -25,6 +27,11 @@ public class OrderStu {
     public void setOid(int oid) {
         this.oid = oid;
     }
+
+    @Basic
+    @Column(name = "sid",nullable = false)
+    public String getSid() {return sid;}
+    public void setSid(String sid) {this.sid = sid;}
 
     @Basic
     @Column(name = "order_time")
@@ -80,7 +87,7 @@ public class OrderStu {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false)
+    @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false,insertable = false,updatable = false)
     public Student getStudentBySid() {
         return studentBySid;
     }

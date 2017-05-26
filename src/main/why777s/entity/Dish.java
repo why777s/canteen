@@ -13,6 +13,8 @@ public class Dish {
     private String wid;
     private Window windowByWid;
 
+    public Dish() {}
+
     @Id
     @Column(name = "did", nullable = false)
     public int getDid() {

@@ -52,6 +52,9 @@ public class StudentServiceImpl implements StudentService {
         String hql="from OrderStu where sid=?";
         return orderstuDao.find_withOnePara(hql,sid);
     }
+    //查订单详情
+    @Transactional
+    public List<DishOrder>getAllDishOrder(){return dishorderDao.findall(DishOrder.class);}
 
     //查学生评论
     @Transactional
@@ -66,24 +69,45 @@ public class StudentServiceImpl implements StudentService {
         commentDao.save(comment);
     }
 
+    //下单
+    @Transactional
+    public void saveOrder(OrderStu ordstu,List<DishOrder> dishOrderList){
+        //保存orderstu
+        orderstuDao.save(ordstu);
+        //保存dishorder,列表操作
+        for (DishOrder dishorder:dishOrderList) {
+            dishorderDao.save(dishorder);
+        }
+    }
+
+    @Transactional
+    public void saveDishOrder(){
+
+    }
+
     //查餐品
     @Transactional
     public List<Canteen> getAllCanteen(){return canteenDao.findall(Canteen.class);}
+    @Transactional
+    public List<Floor> getAllFloor(){
+        return floorDao.findall(Floor.class);
+    }
     @Transactional
     public List<Window> getWindowByFloorId(String fid) {
         String hql = "from Window " +
                 "where fid=?";
         return windowDao.find_withOnePara(hql,fid);
     }
+
     @Transactional
     public List<Dish> getAllDishes() {
         return dishDao.findall(Dish.class);
     }
-    @Transactional
-    public List<Floor> getAllFloor(){
-        return floorDao.findall(Floor.class);
-    }
+
     @Transactional
     public List<Comment> getAllDishComment(){return commentDao.findall(Comment.class);}
+
+    @Transactional
+    public List<OrderStu> getAllOrderStu(){return orderstuDao.findall(OrderStu.class);}
 
 }
