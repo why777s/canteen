@@ -90,6 +90,8 @@
         <property name="windowDao" ref="windowDao"/>
         <property name="dishDao" ref="dishDao"/>
         <property name="orderDao" ref="orderDao"/>
+        <property name="dishOrderDao" ref="dishOrderDao"/>
+        <property name="commentDao" ref="commentDao"/>
     </bean>
 
     <bean id="studentService" class="service.impl.StudentServiceImpl">
@@ -129,6 +131,46 @@
     <bean class="controller.EmployeeAction" id="employeeAction">
         <property name="employeeService" ref="employeeService"/>
     </bean>
+
+
+    <bean id="noticeJob" class="util.NoticeJob"/>
+
+    <bean id="openQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="noticeJob"/>
+        <property name="targetMethod" value="test"/>
+    </bean>
+
+    <!-- Seconds Minutes Hours DayofMonth Month DayofWeek Year -->
+    <!-- 周一到周五每天的10点和16点执行-->
+    <bean id="myTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="openQuartz"/>
+        <property name="cronExpression" value="0 40 10,22 ? * MON-SUN"/>
+    </bean>
+
+    <!--<bean id="myTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">-->
+        <!--<property name="jobDetail" ref="openQuartz"/>-->
+        <!--<property name="startDelay" value="1000"/>-->
+        <!--<property name="repeatInterval" value="2000"/>-->
+    <!--</bean>-->
+
+    <!-- 开启调度 -->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="openQuartz"/>
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="myTrigger2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="testAction" class="controller.testAction">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
 
 
 </beans>

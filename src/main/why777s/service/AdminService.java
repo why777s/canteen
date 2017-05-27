@@ -61,11 +61,35 @@ public interface AdminService {
     Dish getDishByDid(int did);
 
 
+    /**
+     * 根据订单id获取订单实体
+     */
+    OrderStu getOrderByOid(int oid);
+
+
 
     /*
      * 根据订单状态获取订单
      * 订单状态 : "NEW" or "FINISH"
      */
     List<OrderStu> getOrderByOrderStatus(String status);
+
+    /**
+     * 根据订单id获取点菜单（获取订单详情）
+     *
+     */
+    List<DishOrder> getDishOrderByOid(int oid);
+
+
+    /**
+     * 根据订单号计算该订单总价
+     */
+    void updateOrderPrice(int oid);
+
+
+    /**
+     * 获取所有评论
+     */
+    List<Comment> getAllComment();
 
 }

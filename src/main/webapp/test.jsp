@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: why777s
-  Date: 2017/5/20
-  Time: 01:19
+  Date: 2017/5/24
+  Time: 23:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -19,10 +19,20 @@
 
 
     <script>
-        var aj = $.ajax({
+        
+        function testalert() {
+            alert(document.getElementById("qqq").value);
+        }
+
+        function testalert2() {
+            alert(document.getElementById("caonima").value);
+        }
+        $.ajax({
             url:'http://localhost:8080/testAjax.action',
             data:{
-                oid:$('#name').val()
+                a:'aaa',
+                s:'woshizuibangde'
+//                oid:caonima
             },
             type:'post',
             success:function (data) {
@@ -36,39 +46,28 @@
                 alert("异常");
             }
         });
+
     </script>
-
-
-
-    <title>订单信息</title>
+    <title>Title</title>
 </head>
 <body>
+<s:set name="ooid" value="1111"/>
+<input id="caonima"  value="<s:property value="ooid"/>" >
+<br>
+oooooo
+<br>
 
-<table class="table table-hover table-bordered">
-    <tr class="success">
-        <td>订单id</td>
-        <td>下单时间</td>
-        <td>操作</td>
-    </tr>
-    <s:iterator status="st" value="#request.orderList" id="ol">
-        <s:if test="#st.getCount()%4==0">
-            <tr class="success">
-        </s:if>
-        <s:elseif test="#st.getCount()%4==1">
-            <tr class="error">
-        </s:elseif>
-        <s:elseif test="#st.getCount()%4==2">
-            <tr class="warning">
-        </s:elseif>
-        <s:elseif test="#st.getCount()%4==3">
-            <tr class="info">
-        </s:elseif>
-        <td> <s:property value="#ol.oid"/> </td>
-        <td> <s:property value="#ol.orderTime"/></td>
-        <td width="15%"> <button class="btn btn-success">查看详情</button> </td>
-        </tr>
-    </s:iterator>
-</table>
+<s:property value="ooid"/>
+
+<br>
+<p  id="add"> 123</p>
+<p class="addd"> 456</p>
+<br>
+
+<button onclick="testalert()">啊速度撒</button>
+<button onclick="testalert2()">啊速度撒</button>
+
+
 
 
 </body>

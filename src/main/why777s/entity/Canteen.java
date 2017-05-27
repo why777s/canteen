@@ -10,6 +10,8 @@ public class Canteen {
     private String canteenId;
     private String canteenCname;
 
+    private String status;
+
     @Id
     @Column(name = "canteen_id", nullable = false, length = 45)
     public String getCanteenId() {
@@ -29,6 +31,21 @@ public class Canteen {
     public void setCanteenCname(String canteenCname) {
         this.canteenCname = canteenCname;
     }
+
+
+    @Basic
+    @Column(name = "status" , nullable = false , length = 45)
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
+
 
     @Override
     public boolean equals(Object o) {

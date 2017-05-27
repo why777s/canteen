@@ -1,5 +1,6 @@
 package controller;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.Comment;
 import entity.OrderStu;
@@ -9,6 +10,7 @@ import service.impl.StudentServiceImpl;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/5/21.
@@ -36,7 +38,13 @@ public class StudentAction extends ActionSupport {
         return (String)session.getAttribute("userID");
     }
 
-    //查看餐品
+    //将订单号传入Session 暂时的方法
+    public void putOidToSession(int oid){
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String,Object> session = actionContext.getSession();
+        session.put("orderID",oid);
+    }
+
 
 
     //查看订单
@@ -50,6 +58,7 @@ public class StudentAction extends ActionSupport {
             e.printStackTrace();
             return ERROR;
         }
+        putOidToSession(1);
         return SUCCESS;
     }
 

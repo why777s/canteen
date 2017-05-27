@@ -13,6 +13,10 @@ public class DishOrder {
     private int did;
     private Integer dnum;
 
+    private Dish dishBydid;
+
+
+
     @Id
     @Column(name = "oid", nullable = false)
     public int getOid() {
@@ -63,5 +67,16 @@ public class DishOrder {
         result = 31 * result + did;
         result = 31 * result + (dnum != null ? dnum.hashCode() : 0);
         return result;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name = "did",referencedColumnName = "did",insertable = false,updatable = false)
+    public Dish getDishBydid() {
+        return dishBydid;
+    }
+
+    public void setDishBydid(Dish dishBydid) {
+        this.dishBydid = dishBydid;
     }
 }

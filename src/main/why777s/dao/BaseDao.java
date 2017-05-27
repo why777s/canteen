@@ -15,6 +15,7 @@ public interface BaseDao<T> {
     List<T> findall(Class<T> entityClass);
     List<T> find(String hql);
     List<T> find_withOnePara(String hql, String para);
+    List<T> find_withOnePara(String hql, int para);
     List<T> find_withTwoPara(String hql, String para1, String para2);
     long findCount(Class<T> entityClass);
 }

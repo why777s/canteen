@@ -66,7 +66,7 @@
                             </s:elseif>
                             <s:elseif test="#st.getCount()%4==3">
                                 <tr class="info">
-                            </s:elseif>                                <td width="50%"> <s:property value="#dd.dname"/> </td>
+                            </s:elseif> <td width="50%"> <s:property value="#dd.dname"/> </td>
                                 <td width="50%"> <s:property value="#dd.dprice"/> </td>
                             </tr>
                         </s:if>

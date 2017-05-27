@@ -45,28 +45,16 @@
                     基本查询
                 </li>
                 <li>
-                    <a href="<s:url action="turn_canteenInfo"/>" target="cont">订餐查询</a>
+                    <a href="<s:url action="turn_canteenInfo"/>" target="cont">食堂查询</a>
                 </li>
                 <li>
                     <a href="<s:url action="turn_dishInfo"/>" target="cont">餐品查询</a>
                 </li>
                 <li class="nav-header">
-                    食堂操作
-                </li>
-                <li>
-                    <a href="#">窗口修改</a>
-                </li>
-                <li>
-                    <a href="#">餐品修改</a>
-                </li>
-                <li class="nav-header">
                     订单操作
                 </li>
                 <li>
-                    <a href="#">订单处理</a>
-                </li>
-                <li>
-                    <a href="#">订单统计</a>
+                    <a href="<s:url action="turn_orderProcess"/>" target="cont">订单处理</a>
                 </li>
                 <li class="divider">
                 </li>

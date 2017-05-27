@@ -15,6 +15,7 @@
             <result name="employee_login">/WEB-INF/employee/employeeLogin.jsp</result>
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
+
     </package>
 
     <!-- 管理员Action-->
@@ -41,7 +42,18 @@
         <action name="admin_turn_orderInfo" class="adminAction" method="turnOrderInfo">
             <result name="success">/WEB-INF/admin/orderInfo.jsp</result>
             <result name="error">/WEB-INF/admin/orderInfo.jsp</result>
+        </action>
 
+        <!-- 跳转到某订单详情页面"dishOrderInfo.jsp"的Action -->
+        <action name="admin_turn_dishOrderInfo" class="adminAction" method="turnDishOrderInfo">
+            <result name="success">/WEB-INF/admin/dishOrderInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+
+        <!-- 跳转到查看评论页面"allCommentInfo.jsp"的Action -->
+        <action name="turn_allCommentInfo" class="adminAction" method="turnAllCommentInfo">
+            <result name="success">/WEB-INF/admin/allCommentInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
         
         <!-- 修改餐品 保存Action -->
@@ -64,6 +76,30 @@
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
     </package>
+
+
+    <!-- 员工Action -->
+    <package name="employeepack" extends="struts-default">
+        <action name="turn_orderProcess" class="employeeAction" method="turnOrderProcess">
+            <result name="success">/WEB-INF/employee/orderProcess.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+
+        <action name="alterOrderToReady" class="employeeAction" method="alterOrderToReady">
+            <result name="success">/WEB-INF/employee/orderProcess.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+
+    </package>
+
+    <!-- Ajax -->
+    <package name="aj"  namespace="/test" extends="json-default">
+        <action name="testAjax" class="testAction" method="execute">
+            <result name="success" type="json"></result>
+        </action>
+    </package>
+
+
 
 
 
