@@ -231,7 +231,6 @@ public class AdminAction extends ActionSupport {
         System.out.println(dishes.get(0).getDname());
         try{
             first_windows = adminService.getWindowByFloorId(floorList.get(0).getFid());
-
             second_windows = adminService.getWindowByFloorId(floorList.get(1).getFid());
         }catch (NullPointerException e){
             e.printStackTrace();

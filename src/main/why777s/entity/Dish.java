@@ -10,24 +10,32 @@ public class Dish {
     private int did;
     private String dname;
     private double dprice;
+    private String wid;
     private Window windowByWid;
+
+    public Dish() {}
 
     @Id
     @Column(name = "did", nullable = false)
     public int getDid() {
         return did;
     }
-
     public void setDid(int did) {
         this.did = did;
     }
+
+
+
+    @Basic
+    @Column(name = "wid",nullable = false,length = 45)
+    public String getWid() {return wid;}
+    public void setWid(String wid) {this.wid = wid;}
 
     @Basic
     @Column(name = "dname", nullable = false, length = 45)
     public String getDname() {
         return dname;
     }
-
     public void setDname(String dname) {
         this.dname = dname;
     }
@@ -37,7 +45,6 @@ public class Dish {
     public double getDprice() {
         return dprice;
     }
-
     public void setDprice(double dprice) {
         this.dprice = dprice;
     }
@@ -68,11 +75,8 @@ public class Dish {
     }
 
     @ManyToOne
-    @JoinColumn(name = "wid" ,referencedColumnName = "wid",nullable = false)
-    public Window getWindowByWid() {
-        return windowByWid;
-    }
-
+    @JoinColumn(name = "wid" ,referencedColumnName = "wid",nullable = false,insertable = false,updatable = false)
+    public Window getWindowByWid() {return windowByWid;}
     public void setWindowByWid(Window windowByWid) {
         this.windowByWid = windowByWid;
     }

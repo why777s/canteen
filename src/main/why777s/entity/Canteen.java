@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Canteen {
     private String canteenId;
     private String canteenCname;
+    private String status;
 
     private String status;
 
@@ -17,7 +18,6 @@ public class Canteen {
     public String getCanteenId() {
         return canteenId;
     }
-
     public void setCanteenId(String canteenId) {
         this.canteenId = canteenId;
     }
@@ -27,7 +27,6 @@ public class Canteen {
     public String getCanteenCname() {
         return canteenCname;
     }
-
     public void setCanteenCname(String canteenCname) {
         this.canteenCname = canteenCname;
     }
@@ -42,10 +41,6 @@ public class Canteen {
     public void setStatus(String status) {
         this.status = status;
     }
-
-
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -67,5 +62,6 @@ public class Canteen {
         result = 31 * result + (canteenCname != null ? canteenCname.hashCode() : 0);
         return result;
     }
+
 
 }

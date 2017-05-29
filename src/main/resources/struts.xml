@@ -71,8 +71,23 @@
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
         <!--查看评论-->
-        <action name="turn_commentInfo" class="studentAction" method="turnCommentInfo">
+        <action name="stu_turn_commentInfo" class="studentAction" method="turnCommentInfo">
             <result name="success">/WEB-INF/student/commentInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+        <!--点评-->
+        <action name="stu_savecomment" class="studentAction" method="saveComment">
+            <result name="success">/WEB-INF/student/dishInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+        <!--查看菜单-->
+        <action name="stu_turn_dishInfo" class="studentAction" method="turnDishInfo">
+            <result name="success">/WEB-INF/student/dishInfo.jsp</result>
+            <result name="error">/WEB-INF/test/err.jsp</result>
+        </action>
+        <!--下单-->
+        <action name="stu_saveorder" class="studentAction" method="saveOrder">
+            <result name="success">/WEB-INF/student/dishInfo.jsp</result>
             <result name="error">/WEB-INF/test/err.jsp</result>
         </action>
     </package>

@@ -17,18 +17,15 @@ public class Comment {
     private Dish dishByDid;
     private Student studentBySid;
 
+    public Comment() {
+    }
 
     @Id
     @Column(name = "comment_id", nullable = false)
-    public int getCommentId() {
-        return commentId;
-    }
-
+    public int getCommentId() {return commentId;}
     public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
-
-
 
     @Basic
     @Column(name = "did",nullable = false)
@@ -45,17 +42,13 @@ public class Comment {
     public String getCommentContent() {
         return commentContent;
     }
-
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent;
     }
 
     @Basic
-    @Column(name = "comment_time", nullable = false)
-    public Date getCommentTime() {
-        return commentTime;
-    }
-
+    @Column(name = "comment_time")
+    public Date getCommentTime() {return commentTime;}
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }

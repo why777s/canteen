@@ -11,28 +11,33 @@ import java.sql.Date;
 public class OrderStu {
     private int oid;
     private Date orderTime;
+    private String sid;
     private Double oprice;
     private String orderStatus;
-
-
+    //
     private Student studentBySid;
+
+    public OrderStu() {}
 
     @Id
     @Column(name = "oid", nullable = false)
     public int getOid() {
         return oid;
     }
-
     public void setOid(int oid) {
         this.oid = oid;
     }
 
     @Basic
-    @Column(name = "order_time", nullable = false)
+    @Column(name = "sid",nullable = false)
+    public String getSid() {return sid;}
+    public void setSid(String sid) {this.sid = sid;}
+
+    @Basic
+    @Column(name = "order_time")
     public Date getOrderTime() {
         return orderTime;
     }
-
     public void setOrderTime(Date orderTime) {
         this.orderTime = orderTime;
     }
@@ -42,7 +47,6 @@ public class OrderStu {
     public Double getOprice() {
         return oprice;
     }
-
     public void setOprice(Double oprice) {
         this.oprice = oprice;
     }
@@ -83,11 +87,10 @@ public class OrderStu {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false)
+    @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false,insertable = false,updatable = false)
     public Student getStudentBySid() {
         return studentBySid;
     }
-
     public void setStudentBySid(Student studentBySid) {
         this.studentBySid = studentBySid;
     }

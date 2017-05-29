@@ -16,6 +16,7 @@ public class AdminServiceImpl implements AdminService {
     private FloorDaoImpl floorDao;
     private WindowDaoImpl windowDao;
     private DishDaoImpl dishDao;
+
     private OrderDaoImpl orderDao;
     private DishOrderDaoImpl dishOrderDao;
     private CommentDaoImpl commentDao;
@@ -58,7 +59,6 @@ public class AdminServiceImpl implements AdminService {
             return false;
         else
             return target_admin.getApassword().equals(admin.getApassword());
-//        return (target_admin==null) && target_admin.getApassword().equals(admin.getApassword());
     }
 
 
@@ -107,7 +107,7 @@ public class AdminServiceImpl implements AdminService {
     public List<OrderStu> getOrderByOrderStatus(String status) {
         String hql = "from OrderStu " +
                 "where orderStatus=?";
-        return orderDao.find_withOnePara(hql,status);
+        return orderstuDao.find_withOnePara(hql,status);
     }
 
     @Transactional
