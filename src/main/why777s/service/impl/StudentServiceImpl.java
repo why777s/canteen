@@ -93,6 +93,9 @@ public class StudentServiceImpl implements StudentService {
         return floorDao.findall(Floor.class);
     }
     @Transactional
+    public List<Window> getAllWindow(){return windowDao.findall(Window.class);}
+
+    @Transactional
     public List<Window> getWindowByFloorId(String fid) {
         String hql = "from Window " +
                 "where fid=?";

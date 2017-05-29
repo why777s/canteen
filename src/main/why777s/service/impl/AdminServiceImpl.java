@@ -49,7 +49,6 @@ public class AdminServiceImpl implements AdminService {
             return false;
         else
             return target_admin.getApassword().equals(admin.getApassword());
-//        return (target_admin==null) && target_admin.getApassword().equals(admin.getApassword());
     }
 
 

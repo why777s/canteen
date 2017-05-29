@@ -26,6 +26,7 @@
         <th>订单总价</th>
         <th>下单时间</th>
         <th>操作</th>
+        <th>订单详情</th>
     </tr>
     <s:iterator status="st" value="#request.orderstuList" id="osl">
 
@@ -42,7 +43,7 @@
             <tr class="info">
         </s:elseif>
         <td> <s:property value="#osl.oid"/> </td>
-        <td><s:property value="#osl.oprice"/></td>
+        <td><s:property value="#osl.oprice"/>元</td>
         <td> <s:property value="#osl.orderTime"/></td>
         <td width="15%"> <button class="btn btn-success">查看详情</button> </td>
         <td>
@@ -58,7 +59,7 @@
                     <s:if test="#dol.oid==#osl.oid">
                         <tr>
                             <td><s:property value="#dol.dishByDid.dname"/></td>
-                            <td><s:property value="#dol.dishByDid.dprice"/></td>
+                            <td><s:property value="#dol.dishByDid.dprice"/>元</td>
                             <td><s:property value="#dol.dnum"/></td>
                         </tr>
                     </s:if>

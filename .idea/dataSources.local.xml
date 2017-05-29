@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - canteen@localhost" uuid="92a465a1-7db8-49ff-8e70-15e87967dacc">
+    <data-source name="MySQL - canteen@localhost" uuid="0ad3492d-440b-425f-837a-d5c96c0aca94">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <schema-pattern>canteen.*</schema-pattern>

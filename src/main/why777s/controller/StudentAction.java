@@ -33,24 +33,28 @@ public class StudentAction extends ActionSupport {
     private List<Comment> commentList;
     private List<Comment> dish_commentList;
     //菜单
-    private List<Dish> dishList;
     private List<Floor> floorList;
+    private List<Window> windowList;
+    private List<Dish> dishList;
+    private int dishsize;
+    //
     private List<Window> first_windows;
     private List<Window> second_windows;
-    private int dishsize;
 
-    public void setOrderstuList(List<OrderStu> orderstuList) {
-        this.orderstuList = orderstuList;
-    }
+
+   //个人评论
     public void setCommentList(List<Comment> commentList) {
         this.commentList = commentList;
     }
     public List<Comment> getCommentList() {return commentList;}
-    public List<OrderStu> getOrderstuList() {return orderstuList;}
-    public List<Dish> getDishList() {return dishList;}
-    public void setDishList(List<Dish> dishList) {this.dishList = dishList;}
+    //菜单
     public List<Floor> getFloorList() {return floorList;}
     public void setFloorList(List<Floor> floorList) {this.floorList = floorList;}
+    public List<Window> getWindowList() {return windowList;}
+    public void setWindowList(List<Window> windowList) {this.windowList = windowList;}
+    public List<Dish> getDishList() {return dishList;}
+    public void setDishList(List<Dish> dishList) {this.dishList = dishList;}
+    //
     public List<Window> getFirst_windows() {
         return first_windows;
     }
@@ -65,8 +69,10 @@ public class StudentAction extends ActionSupport {
     }
     public int getDishsize() {return dishsize;}
     public void setDishsize(int dishsize) {this.dishsize = dishsize;}
+    //菜品评论
     public List<Comment> getDish_commentList() {return dish_commentList;}
     public void setDish_commentList(List<Comment> dish_commentList) {this.dish_commentList = dish_commentList;}
+    //点评
     public String getContent() {
         return content;
     }
@@ -93,6 +99,10 @@ public class StudentAction extends ActionSupport {
         this.dishOrderList = dishOrderList;
     }
     //查单
+    public void setOrderstuList(List<OrderStu> orderstuList) {
+        this.orderstuList = orderstuList;
+    }
+    public List<OrderStu> getOrderstuList() {return orderstuList;}
     public List<DishOrder> getDishOrderList_look() {return dishOrderList_look;}
     public void setDishOrderList_look(List<DishOrder> dishOrderList_look) {this.dishOrderList_look = dishOrderList_look;}
 
@@ -113,6 +123,8 @@ public class StudentAction extends ActionSupport {
             //用循环控制tab切换？
             first_windows = studentService.getWindowByFloorId(floorList.get(0).getFid());
             second_windows = studentService.getWindowByFloorId(floorList.get(1).getFid());
+            //
+//            windowList=studentService.getAllWindow();
         }catch (Exception e){
             e.printStackTrace();
             return ERROR;
@@ -123,7 +135,6 @@ public class StudentAction extends ActionSupport {
     //查看订单
     public String turnOrderInfo() throws Exception{
         String sid=getUserFromSession();
-//        Student stu=studentService.getStu(sid);
         try{
             orderstuList =studentService.getOrderStu(sid);
             dishOrderList_look=studentService.getAllDishOrder();
@@ -134,7 +145,7 @@ public class StudentAction extends ActionSupport {
         return SUCCESS;
     }
 
-    //查看自己评论
+    //查看个人评论
     public String turnCommentInfo() throws Exception{
         String sid=getUserFromSession();
         try{
@@ -177,6 +188,8 @@ public class StudentAction extends ActionSupport {
         //set:oid,did,dnum
         for (DishOrder dishorder:dishOrderList) {
             dishorder.setOid(oid);
+            System.out.print("菜名："+dishorder.getDid()+"\n");
+            System.out.print("数量："+dishorder.getDnum()+"\n");
         }
         try{
             studentService.saveOrder(orderStu,dishOrderList);
