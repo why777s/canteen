@@ -11,6 +11,8 @@ public class Canteen {
     private String canteenCname;
     private String status;
 
+    private String status;
+
     @Id
     @Column(name = "canteen_id", nullable = false, length = 45)
     public String getCanteenId() {
@@ -29,11 +31,13 @@ public class Canteen {
         this.canteenCname = canteenCname;
     }
 
+
     @Basic
     @Column(name = "status" , nullable = false , length = 45)
     public String getStatus() {
         return status;
     }
+
     public void setStatus(String status) {
         this.status = status;
     }

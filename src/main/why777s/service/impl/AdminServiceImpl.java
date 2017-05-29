@@ -16,10 +16,20 @@ public class AdminServiceImpl implements AdminService {
     private FloorDaoImpl floorDao;
     private WindowDaoImpl windowDao;
     private DishDaoImpl dishDao;
-    private OrderStuDaoImpl orderstuDao;
 
-    public void setOrderstuDao(OrderStuDaoImpl orderstuDao) {
-        this.orderstuDao = orderstuDao;
+    private OrderDaoImpl orderDao;
+    private DishOrderDaoImpl dishOrderDao;
+    private CommentDaoImpl commentDao;
+
+    public void setCommentDao(CommentDaoImpl commentDao) {
+        this.commentDao = commentDao;
+    }
+
+    public void setDishOrderDao(DishOrderDaoImpl dishOrderDao) {
+        this.dishOrderDao = dishOrderDao;
+    }
+    public void setOrderDao(OrderDaoImpl orderDao) {
+        this.orderDao = orderDao;
     }
 
     public void setDishDao(DishDaoImpl dishDao) {
@@ -99,4 +109,36 @@ public class AdminServiceImpl implements AdminService {
                 "where orderStatus=?";
         return orderstuDao.find_withOnePara(hql,status);
     }
+
+    @Transactional
+    public List<DishOrder> getDishOrderByOid(int oid) {
+        String hql = "from DishOrder " +
+                "where  oid=?";
+        return dishOrderDao.find_withOnePara(hql,oid);
+    }
+
+    @Transactional
+    public OrderStu getOrderByOid(int oid) {
+        return orderDao.get(OrderStu.class,oid);
+    }
+
+    @Transactional
+    public void updateOrderPrice(int oid) {
+        Double sum = 0.0;
+        OrderStu order = getOrderByOid(oid);
+        List<DishOrder> dishOrders = getDishOrderByOid(oid);
+        for (DishOrder dishOrder:dishOrders){
+            Dish dish = getDishByDid(dishOrder.getDid());
+            sum+= dish.getDprice() * dishOrder.getDnum();
+        }
+        order.setOprice(sum);
+        orderDao.update(order);
+    }
+
+    @Transactional
+    public List<Comment> getAllComment() {
+        return commentDao.findall(Comment.class);
+    }
+
+
 }

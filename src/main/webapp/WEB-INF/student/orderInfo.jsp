@@ -13,9 +13,33 @@
         String path = request.getContextPath();
         String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     %>
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="<%=basePath%>/jQuery/jquery.min.js"></script>
     <script src="<%=basePath%>/bootstrap/js/bootstrap.js"></script>
     <link href="<%=basePath%>/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+
+    <script>
+        var aj = $.ajax({
+            url:'http://localhost:8080/testAjax.action',
+            data:{
+                oid:$('#name').val()
+            },
+            type:'post',
+            success:function (data) {
+                if(data.message =="true"){
+                    alert("成功");
+                }else {
+                    view(data.msg);
+                }
+            },
+            error:function(){
+                alert("异常");
+            }
+        });
+    </script>
+
+
+
     <title>订单信息</title>
 </head>
 <body>

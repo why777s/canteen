@@ -18,6 +18,10 @@ public class DishOrder {
 
     public DishOrder() {}
 
+    private Dish dishBydid;
+
+
+
     @Id
     @Column(name = "oid", nullable = false)
     public int getOid() {
@@ -76,4 +80,5 @@ public class DishOrder {
     @JoinColumn(name = "oid",referencedColumnName = "oid",nullable = false,insertable = false,updatable = false)
     public OrderStu getOrderStuByOid() {return orderStuByOid;}
     public void setOrderStuByOid(OrderStu orderStuByOid) {this.orderStuByOid = orderStuByOid;}
+
 }

@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: why777s
-  Date: 2017/5/22
-  Time: 16:35
+  Date: 2017/5/23
+  Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -25,14 +25,52 @@
     <title>Title</title>
 </head>
 <body>
+<blockquote>
+    <p>订单详情</p>
+</blockquote>
 <table class="table table-hover table-bordered">
     <tr>
-        <th>订单号</th>
-        <th>学生号</th>
-        <th>下单时间</th>
-        <th>操作</th>
+        <td>订单号:</td>
+        <td> <s:property value="oid_for_dishOrder"/> </td>
     </tr>
-    <s:iterator value="#request.finished_orders" id="fo" status="st">
+    <tr class="success">
+        <td>下单时间:</td>
+        <td>
+            <s:property value="orderByOid.orderTime"/>
+        </td>
+    </tr>
+    <tr class="error">
+        <td>学号:</td>
+        <td>
+            <s:property value="orderByOid.studentBySid.sid"/>
+        </td>
+    </tr>
+    <tr class="warning">
+        <td>姓名:</td>
+        <td>
+            <s:property value="orderByOid.studentBySid.sname"/>
+        </td>
+    </tr>
+    <tr class="info">
+        <td>总价:</td>
+        <td>
+            <s:property value="orderByOid.oprice"/>
+        </td>
+
+    </tr>
+</table>
+
+
+<br>
+<h4 align="center">点菜单</h4>
+<table class="table table-hover table-bordered">
+    <tr class="success">
+        <th>餐品id</th>
+        <th>餐品名</th>
+        <th>数量</th>
+        <th>单价</th>
+    </tr>
+    <s:iterator value="#request.dishOrders" id="do" status="st">
             <s:if test="#st.getCount()%4==0">
                 <tr class="success">
             </s:if>
@@ -45,16 +83,10 @@
             <s:elseif test="#st.getCount()%4==3">
                 <tr class="info">
             </s:elseif>
-            <td> <s:property value="#fo.oid"/> </td>
-            <td> <s:property value="#fo.studentBySid.sid"/> </td>
-            <td> <s:property value="#fo.orderTime"/> </td>
-            <td width="15%">
-                <a class="btn btn-success"
-                   href="<s:url action="admin_turn_dishOrderInfo">
-                            <s:param name="oid_for_dishOrder" value="%{oid}"/>
-                        </s:url> "
-                >查看详情</a>
-            </td>
+            <td> <s:property value="#do.did"/> </td>
+            <td> <s:property value="#do.dishBydid.dname"/> </td>
+            <td> <s:property value="#do.dnum"/> </td>
+            <td> <s:property value="#do.dishBydid.dprice"/> </td>
             </tr>
     </s:iterator>
 </table>

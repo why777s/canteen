@@ -63,7 +63,7 @@
                     <a href="<s:url action="turn_dishInfo"/>" target="cont">餐品查询</a>
                 </li>
                 <li>
-                    <a href="#" target="cont">查看评论</a>
+                    <a href="<s:url action="turn_allCommentInfo"/>" target="cont">查看评论</a>
                 </li>
                 <li class="nav-header">
                     食堂操作

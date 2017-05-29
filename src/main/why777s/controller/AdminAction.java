@@ -24,16 +24,52 @@ public class AdminAction extends ActionSupport {
     private List<Window> all_windows;
     private List<Dish> dishes;
     private List<OrderStu> finished_orders;
+    private List<Comment> comments;
+
+    private List<DishOrder> dishOrders;
+    private int oid_for_dishOrder;
+    private OrderStu orderByOid;
 
     private String ad_downmenu_wid;
 
     private Window windowByWid;
 
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public OrderStu getOrderByOid() {
+        return orderByOid;
+    }
+
+    public void setOrderByOid(OrderStu orderByOid) {
+        this.orderByOid = orderByOid;
+    }
+
+    public int  getOid_for_dishOrder() {
+        return oid_for_dishOrder;
+    }
+
+    public void setOid_for_dishOrder(int oid_for_dishOrder) {
+        this.oid_for_dishOrder = oid_for_dishOrder;
+    }
 
     private List<String> changed_dnames;
     private List<Double> changed_dprices;
     private List<Integer> dids;
+
+    public List<DishOrder> getDishOrders() {
+        return dishOrders;
+    }
+
+    public void setDishOrders(List<DishOrder> dishOrders) {
+        this.dishOrders = dishOrders;
+    }
 
     public List<OrderStu> getFinished_orders() {
         return finished_orders;
@@ -268,9 +304,33 @@ public class AdminAction extends ActionSupport {
         return SUCCESS;
     }
 
+    /**
+     * 跳转到订单查询页面的处理Action
+     * 传List<OrderStu> finished_orders 到前台
+     */
     public String turnOrderInfo() throws Exception{
         finished_orders = adminService.getOrderByOrderStatus("FINISH");
         return SUCCESS;
     }
 
+    /**
+     * 查看某订单的详细信息的Action
+     * 根据从前台收到的订单号得到其List<DishOrder>（为了向前台显示该订单的餐品信息）
+     * 根据从前台收到的订单号获得订单完整实体（为了向前台显示该订单的学生信息）
+     */
+    public String turnDishOrderInfo() throws Exception{
+        //计算订单的总额   暂且放在这边，暂且！
+        adminService.updateOrderPrice(oid_for_dishOrder);
+        dishOrders = adminService.getDishOrderByOid(oid_for_dishOrder);
+        orderByOid = adminService.getOrderByOid(oid_for_dishOrder);
+        return SUCCESS;
+    }
+
+    /**
+     * 跳转到查看评论页面的Action的处理类
+     */
+    public String turnAllCommentInfo() throws Exception{
+        comments = adminService.getAllComment();
+        return SUCCESS;
+    }
 }
