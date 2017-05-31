@@ -68,12 +68,6 @@ public class BaseDaoFunc<T> implements BaseDao<T> {
                 .list();
     }
 
-    public List<T> find_withOnePara_Int(String hql, int para) {
-        return (List<T>)getSessionFactory().getCurrentSession()
-                .createQuery(hql).setParameter(0,para)
-                .list();
-    }
-
     @SuppressWarnings("unchecked")
     public List<T> find_withOnePara(String hql, int para) {
         return (List<T>)getSessionFactory().getCurrentSession()

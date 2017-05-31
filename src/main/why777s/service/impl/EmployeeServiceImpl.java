@@ -1,6 +1,5 @@
 package service.impl;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import dao.impl.CommentDaoImpl;
 import dao.impl.DishDaoImpl;
 import dao.impl.EmployeeDaoImpl;
@@ -17,17 +16,17 @@ import java.util.List;
  */
 public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDaoImpl employeeDao;
-    private OrderStuDaoImpl orderstuDao;
+    private OrderStuDaoImpl orderStuDao;
     private CommentDaoImpl commentDao;
     private DishDaoImpl dishDao;
     private OrderStu orderStu;
 
-    public void setOrderStu(OrderStu orderStu) {
-        this.orderStu = orderStu;
-    }
 
+    public void setOrderStuDao(OrderStuDaoImpl orderStuDao) {
+        this.orderStuDao = orderStuDao;
+    }
     public void setEmployeeDao(EmployeeDaoImpl employeeDao) {this.employeeDao = employeeDao;}
-    public void setOrderstuDao(OrderStuDaoImpl orderstuDao) {this.orderstuDao = orderstuDao;}
+    public void setOrderDao(OrderStuDaoImpl orderStuDao) {this.orderStuDao = orderStuDao;}
     public void setCommentDao(CommentDaoImpl commentDao) {this.commentDao = commentDao;}
     public void setDishDao(DishDaoImpl dishDao) {this.dishDao = dishDao;}
 
@@ -46,32 +45,32 @@ public class EmployeeServiceImpl implements EmployeeService {
         String status = "NEW";
         String hql = "from OrderStu " +
                 "where orderStatus = ?";
-        return orderDao.find_withOnePara(hql,status);
+        return orderStuDao.find_withOnePara(hql,status);
     }
 
     @Transactional
     public List<OrderStu> getAllOrder() {
-        return orderDao.findall(OrderStu.class);
+        return orderStuDao.findall(OrderStu.class);
     }
 
     @Transactional
     public List<OrderStu> getAllOrderByStatus(String status) {
         String hql = "from OrderStu " +
                 "where orderStatus = ?";
-        return orderDao.find_withOnePara(hql,status);
+        return orderStuDao.find_withOnePara(hql,status);
     }
 
     @Transactional
     public OrderStu getOrderByOid(int oid) {
-        return orderDao.get(OrderStu.class,oid);
+        return orderStuDao.get(OrderStu.class,oid);
     }
 
     @Transactional
     public void setOrderStatus(int oid,String new_status) {
-        OrderStu orderStu = orderDao.get(OrderStu.class,oid);
+        OrderStu orderStu = orderStuDao.get(OrderStu.class,oid);
         if (!orderStu.getOrderStatus().equals(new_status)){
             orderStu.setOrderStatus(new_status);
-            orderDao.update(orderStu);
+            orderStuDao.update(orderStu);
         }
     }
 

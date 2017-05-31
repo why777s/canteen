@@ -143,21 +143,6 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
     </dependency>
-    <!--AJAX所需JSON解析-->
-    <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
-    <dependency>
-      <groupId>net.sf.json-lib</groupId>
-      <artifactId>json-lib</artifactId>
-      <version>2.4</version>
-      <classifier>jdk15</classifier>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-json-plugin -->
-    <dependency>
-      <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-json-plugin</artifactId>
-      <version>2.3.24</version>
-    </dependency>
 
 
 

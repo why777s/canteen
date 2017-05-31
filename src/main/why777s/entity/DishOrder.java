@@ -12,11 +12,6 @@ public class DishOrder {
     private int oid;
     private int did;
     private Integer dnum;
-    //
-    private Dish dishByDid;
-    private OrderStu orderStuByOid;
-
-    public DishOrder() {}
 
     private Dish dishBydid;
 
@@ -27,6 +22,7 @@ public class DishOrder {
     public int getOid() {
         return oid;
     }
+
     public void setOid(int oid) {
         this.oid = oid;
     }
@@ -36,6 +32,7 @@ public class DishOrder {
     public int getDid() {
         return did;
     }
+
     public void setDid(int did) {
         this.did = did;
     }
@@ -45,6 +42,7 @@ public class DishOrder {
     public Integer getDnum() {
         return dnum;
     }
+
     public void setDnum(Integer dnum) {
         this.dnum = dnum;
     }
@@ -71,14 +69,14 @@ public class DishOrder {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "did",referencedColumnName = "did",nullable = false,insertable = false,updatable = false)
-    public Dish getDishByDid() {return dishByDid;}
-    public void setDishByDid(Dish dishByDid) {this.dishByDid = dishByDid;}
 
     @ManyToOne
-    @JoinColumn(name = "oid",referencedColumnName = "oid",nullable = false,insertable = false,updatable = false)
-    public OrderStu getOrderStuByOid() {return orderStuByOid;}
-    public void setOrderStuByOid(OrderStu orderStuByOid) {this.orderStuByOid = orderStuByOid;}
+    @JoinColumn(name = "did",referencedColumnName = "did",insertable = false,updatable = false)
+    public Dish getDishBydid() {
+        return dishBydid;
+    }
 
+    public void setDishBydid(Dish dishBydid) {
+        this.dishBydid = dishBydid;
+    }
 }

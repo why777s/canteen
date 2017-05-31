@@ -10,7 +10,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/canteen?useUnicode=true&amp;characterEncoding=UTF8"/>
         <property name="username" value="root"/>
-        <property name="password" value="love1212"/>
+        <property name="password" value=""/>
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -68,7 +68,7 @@
     <bean id="studentDao" class="dao.impl.StudentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-    <bean id="orderstuDao" class="dao.impl.OrderStuDaoImpl">
+    <bean id="orderStuDao" class="dao.impl.OrderStuDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="dishOrderDao" class="dao.impl.DishOrderDaoImpl">
@@ -89,28 +89,27 @@
         <property name="floorDao" ref="floorDao"/>
         <property name="windowDao" ref="windowDao"/>
         <property name="dishDao" ref="dishDao"/>
-
-        <property name="orderDao" ref="orderDao"/>
+        <property name="orderStuDao" ref="orderStuDao"/>
         <property name="dishOrderDao" ref="dishOrderDao"/>
         <property name="commentDao" ref="commentDao"/>
     </bean>
 
     <bean id="studentService" class="service.impl.StudentServiceImpl">
         <property name="studentDao" ref="studentDao"/>
-        <property name="orderstuDao" ref="orderstuDao"/>
         <property name="dishDao" ref="dishDao"/>
         <property name="canteenDao" ref="canteenDao"/>
         <property name="commentDao" ref="commentDao"/>
         <property name="dishorderDao" ref="dishOrderDao"/>
         <property name="floorDao" ref="floorDao"/>
         <property name="windowDao" ref="windowDao"/>
+        <property name="orderStuDao" ref="orderStuDao"/>
     </bean>
 
     <bean id="employeeService" class="service.impl.EmployeeServiceImpl">
         <property name="employeeDao" ref="employeeDao"/>
         <property name="commentDao" ref="commentDao"/>
         <property name="dishDao" ref="dishDao"/>
-        <property name="orderstuDao" ref="orderstuDao"/>
+        <property name="orderStuDao" ref="orderStuDao"/>
     </bean>
 
 
@@ -136,23 +135,20 @@
 
     <bean id="noticeJob" class="util.NoticeJob"/>
 
+
+    <!-- 调度业务  -->
     <bean id="openQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject" ref="noticeJob"/>
         <property name="targetMethod" value="test"/>
     </bean>
 
+    <!-- 定义触发器Bean -->
     <!-- Seconds Minutes Hours DayofMonth Month DayofWeek Year -->
     <!-- 周一到周五每天的10点和16点执行-->
     <bean id="myTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="openQuartz"/>
-        <property name="cronExpression" value="0 40 10,22 ? * MON-SUN"/>
+        <property name="cronExpression" value="0 0 10,14 ? * MON-SUN"/>
     </bean>
-
-    <!--<bean id="myTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">-->
-        <!--<property name="jobDetail" ref="openQuartz"/>-->
-        <!--<property name="startDelay" value="1000"/>-->
-        <!--<property name="repeatInterval" value="2000"/>-->
-    <!--</bean>-->
 
     <!-- 开启调度 -->
     <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

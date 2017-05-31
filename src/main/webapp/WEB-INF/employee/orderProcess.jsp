@@ -84,7 +84,7 @@
         <td> <s:property value="#ro.oid"/></td>
         <td> <s:property value="#ro.studentBySid.sid"/></td>
         <td> <s:property value="#ro.orderTime"/></td>
-        <td width="15%">
+        <td width="20%">
             <a class="btn btn-success" href="<s:url action="alterOrderToReady">
                          <s:param name="oidForAlter" value="%{oid}"/>
                      </s:url> ">通知取餐

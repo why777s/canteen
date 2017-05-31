@@ -34,7 +34,7 @@ public interface StudentService {
      * @param sid the sid
      * @return the order
      */
-    List<OrderStu> getOrderStu(String sid);
+    List<OrderStu> getOrder(String sid);
 
     /**
      * Gets comment.

@@ -16,8 +16,7 @@ public class AdminServiceImpl implements AdminService {
     private FloorDaoImpl floorDao;
     private WindowDaoImpl windowDao;
     private DishDaoImpl dishDao;
-
-    private OrderDaoImpl orderDao;
+    private OrderStuDaoImpl orderStuDao;
     private DishOrderDaoImpl dishOrderDao;
     private CommentDaoImpl commentDao;
 
@@ -28,8 +27,9 @@ public class AdminServiceImpl implements AdminService {
     public void setDishOrderDao(DishOrderDaoImpl dishOrderDao) {
         this.dishOrderDao = dishOrderDao;
     }
-    public void setOrderDao(OrderDaoImpl orderDao) {
-        this.orderDao = orderDao;
+
+    public void setOrderStuDao(OrderStuDaoImpl orderStuDao) {
+        this.orderStuDao = orderStuDao;
     }
 
     public void setDishDao(DishDaoImpl dishDao) {
@@ -59,6 +59,7 @@ public class AdminServiceImpl implements AdminService {
             return false;
         else
             return target_admin.getApassword().equals(admin.getApassword());
+//        return (target_admin==null) && target_admin.getApassword().equals(admin.getApassword());
     }
 
 
@@ -107,7 +108,7 @@ public class AdminServiceImpl implements AdminService {
     public List<OrderStu> getOrderByOrderStatus(String status) {
         String hql = "from OrderStu " +
                 "where orderStatus=?";
-        return orderstuDao.find_withOnePara(hql,status);
+        return orderStuDao.find_withOnePara(hql,status);
     }
 
     @Transactional
@@ -119,7 +120,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Transactional
     public OrderStu getOrderByOid(int oid) {
-        return orderDao.get(OrderStu.class,oid);
+        return orderStuDao.get(OrderStu.class,oid);
     }
 
     @Transactional
@@ -132,7 +133,7 @@ public class AdminServiceImpl implements AdminService {
             sum+= dish.getDprice() * dishOrder.getDnum();
         }
         order.setOprice(sum);
-        orderDao.update(order);
+        orderStuDao.update(order);
     }
 
     @Transactional
