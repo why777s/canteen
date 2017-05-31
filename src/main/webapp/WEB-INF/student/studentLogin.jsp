@@ -23,8 +23,17 @@
             overflow-y:hidden;
         }
     </style>
+    <script>
+            function turn_dishInfo() {
+//                form=document.form;
+//                form.action="stu_turn_dishInfo";
+//                form.target="cont";
+//                form.submit();
+                document.getElementById("turn_dishInfo").click();
+            };
+    </script>
 </head>
-<body>
+<body onload="turn_dishInfo()">
 <div class="container-fluid">
     <div class="navbar">
         <div class="navbar-inner">
@@ -34,7 +43,7 @@
                 <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav">
                         <li class="active">
-                            <a href="<s:url action="stu_turn_dishInfo"/>" target="cont" >菜单查询</a>
+                            <a id="turn_dishInfo" href="<s:url action="stu_turn_dishInfo"/>" target="cont" >菜单查询</a>
                         </li>
                         <li>
                             <a href="<s:url action="stu_turn_orderInfo"/>" target="cont">订单查询</a>

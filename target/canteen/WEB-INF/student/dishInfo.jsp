@@ -190,7 +190,7 @@
 
 function prependOrder(orderaction,did,dname,dprice,dnum) {
     var txt1="<div class='div' id='"+did+"'><span>"+dname+"("+dprice+"元)：</span>"+
-            "<input readonly='true' class='dnuminput' value=\""+dnum+"\">个"+
+            "<input readonly='true' class='dnuminput' value=\""+dnum+"\">份"+
             "<input type='hidden' class='didinput'  value=\""+did+"\"></div>";
     orderaction.prepend(txt1);
 };
