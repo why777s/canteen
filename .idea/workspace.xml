@@ -2,276 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="777d3faa-7c2a-4b8e-8df4-e878c0081310" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/courinder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/drinks_lussy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/gorkha-special-chicken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/img/images/salate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/controller/AdminAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/controller/EmployeeAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/controller/LoginAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/controller/StudentAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/controller/testAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/BaseDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/BaseDaoFunc.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/AdminDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/CanteenDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/CommentDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/DishDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/DishOrderDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/EmployeeDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/FloorDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/OrderStuDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/StudentDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/dao/impl/WindowDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Admin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Canteen.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Comment.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Dish.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/DishOrder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/DishOrderPK.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Employee.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Floor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/OrderStu.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Student.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/entity/Window.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/AdminService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/EmployeeService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/StudentService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/impl/AdminServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/impl/EmployeeServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/service/impl/StudentServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/util/NoticeJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/asm-3.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/asm-commons-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/asm-tree-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/c3p0-0.9.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/cglib-2.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-beanutils-1.8.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-collections-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-dbcp-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-fileupload-1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-io-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-lang-2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-lang3-3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/commons-pool-1.5.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/ezmorph-1.0.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/freemarker-2.3.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/hibernate-commons-annotations-4.0.5.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/hibernate-core-4.3.8.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/jandex-1.1.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/javassist-3.18.1-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/javax.servlet-api-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/jboss-logging-3.1.3.GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/jboss-logging-annotations-1.2.0.Beta1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/json-lib-2.4-jdk15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/mysql-connector-java-5.1.38.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/ognl-3.0.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/quartz-2.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/quartz-jobs-2.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/servlet-api-2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/slf4j-api-1.6.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-aop-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-beans-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-context-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-context-support-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-core-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-expression-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-jdbc-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-orm-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-tx-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/struts2-core-2.3.24.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/struts2-json-plugin-2.3.24.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/struts2-spring-plugin-2.3.24.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/xml-apis-1.0.b2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/lib/xwork-core-2.3.24.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/HBuilder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/aiwrap.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/courinder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/drinks_lussy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/gorkha-special-chicken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/images/salate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/img/web_login_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/AdminAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/EmployeeAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/LoginAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/StudentAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/testAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/BaseDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/BaseDaoFunc.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/AdminDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/CanteenDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/CommentDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/DishDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/DishOrderDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/EmployeeDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/FloorDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/OrderStuDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/StudentDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/dao/impl/WindowDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Admin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Canteen.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Comment.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Dish.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/DishOrder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/DishOrderPK.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Employee.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Floor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/OrderStu.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Student.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/entity/Window.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/AdminService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/EmployeeService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/StudentService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/impl/AdminServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/impl/EmployeeServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/service/impl/StudentServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/util/NoticeJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/canteen_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/canteen_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_tree_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_0_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_core_2_3_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_json_plugin_2_3_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_spring_plugin_2_3_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_xwork_xwork_core_2_3_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_22.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_8_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_3_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_jobs_2_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/studentstyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/adminLogin.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/allCommentInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/canteenInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/dishInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/dishOrderInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/dishUpdate.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/admin/orderInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/applicationContext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/classes/struts.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/employee/employeeLogin.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/employee/orderProcess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/student/commentInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/student/dishInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/student/orderInfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/student/studentLogin.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/student/testAjax.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/test/err.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/test/suc.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/css/adminkf.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/css/studentLogin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/css/studentstyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/jQuery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/test.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/canteen/test2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/struts.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canteen.iml" afterPath="$PROJECT_DIR$/canteen.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/dishInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/dishInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/orderInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/orderInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/studentLogin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student/studentLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/controller/AdminAction.java" afterPath="$PROJECT_DIR$/src/main/why777s/controller/AdminAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/controller/EmployeeAction.java" afterPath="$PROJECT_DIR$/src/main/why777s/controller/EmployeeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/controller/StudentAction.java" afterPath="$PROJECT_DIR$/src/main/why777s/controller/StudentAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Admin.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Canteen.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Canteen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Comment.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Dish.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/DishOrder.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/DishOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Floor.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Floor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/OrderStu.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/OrderStu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/entity/Window.java" afterPath="$PROJECT_DIR$/src/main/why777s/entity/Window.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/service/StudentService.java" afterPath="$PROJECT_DIR$/src/main/why777s/service/StudentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/service/impl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/why777s/service/impl/AdminServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/why777s/service/impl/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/why777s/service/impl/StudentServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -298,10 +29,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - canteen@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -313,7 +40,7 @@
       <file leaf-file-name="OrderStu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/OrderStu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="513">
               <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
@@ -333,7 +60,7 @@
       <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/Comment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="486">
               <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
@@ -343,7 +70,7 @@
       <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/service/impl/AdminServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
+            <state relative-caret-position="1836">
               <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -355,7 +82,7 @@
       <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
+            <state relative-caret-position="1080">
               <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
               <folding />
             </state>
@@ -368,7 +95,7 @@
       <file leaf-file-name="employeeLogin.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeLogin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
+            <state relative-caret-position="1377">
               <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding />
             </state>
@@ -388,7 +115,7 @@
       <file leaf-file-name="Floor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/Floor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="297">
               <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
@@ -398,8 +125,8 @@
       <file leaf-file-name="AdminAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/AdminAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2553">
-              <caret line="229" column="45" selection-start-line="229" selection-start-column="45" selection-end-line="229" selection-end-column="45" />
+            <state relative-caret-position="243">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -408,7 +135,7 @@
       <file leaf-file-name="StudentAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/StudentAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="3915">
               <caret line="173" column="23" selection-start-line="173" selection-start-column="23" selection-end-line="173" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -472,10 +199,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="17" />
-    <option name="width" value="1689" />
-    <option name="height" value="1019" />
+    <option name="x" value="379" />
+    <option name="y" value="70" />
+    <option name="width" value="1529" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -912,14 +639,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -1475,19 +1202,19 @@
       <workItem from="1496079234847" duration="171000" />
       <workItem from="1496225161990" duration="202000" />
       <workItem from="1496225384139" duration="5527000" />
+      <workItem from="1496232386723" duration="50000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6028000" />
+    <option name="totallyTimeSpent" value="6078000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="17" width="1689" height="1019" extended-state="0" />
-    <editor active="false" />
+    <frame x="379" y="70" width="1529" height="916" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17494357" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1495,20 +1222,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38939053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16471216" sideWeight="0.28157896" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968692" sideWeight="0.71842104" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18924439" sideWeight="0.71842104" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15592387" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15588836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1516,8 +1241,11 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17494357" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38939053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1537,6 +1265,66 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/why777s/service/impl/AdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeLogin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/DishOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/Floor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/AdminAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/StudentAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3915">
+          <caret line="173" column="23" selection-start-line="173" selection-start-column="23" selection-end-line="173" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/student/commentInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1589,7 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-405">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1597,7 +1384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1605,7 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-32">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1621,7 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1637,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="74" column="30" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1645,7 +1426,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1658,7 +1438,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1671,7 +1450,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1700,7 +1478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1716,7 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1371">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1724,9 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1742,7 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,7 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1798,7 +1569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1806,7 +1576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1814,7 +1583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1822,13 +1590,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
           <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/OrderStu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="513">
           <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
@@ -1836,7 +1603,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
+        <state relative-caret-position="297">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
@@ -1860,7 +1627,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/entity/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="486">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
@@ -1868,7 +1635,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
+        <state relative-caret-position="1080">
           <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding />
         </state>
@@ -1879,7 +1646,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeLogin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
+        <state relative-caret-position="1377">
           <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding />
         </state>
@@ -1887,7 +1654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
+        <state relative-caret-position="1836">
           <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1897,7 +1664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/StudentAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="3915">
           <caret line="173" column="23" selection-start-line="173" selection-start-column="23" selection-end-line="173" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1907,8 +1674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/why777s/controller/AdminAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2553">
-          <caret line="229" column="45" selection-start-line="229" selection-start-column="45" selection-end-line="229" selection-end-column="45" />
+        <state relative-caret-position="243">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1967,7 +1734,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|canteen</last-edited>
+          <last-edited>Hibernate|canteen</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1995,7 +1762,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35121328" />
               </list>
             </option>
           </splitter-proportions>
