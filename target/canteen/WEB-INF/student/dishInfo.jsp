@@ -188,17 +188,15 @@
 
 <script>
 
-function prependOrder(orderaction,did,dname,dprice,dnum,orderstu_num) {
+function prependOrder(orderaction,did,dname,dprice,dnum) {
     var txt1="<div class='div' id='"+did+"'><span>"+dname+"("+dprice+"元)：</span>"+
-            "<input readonly='true' class='dnuminput' value=\""+dnum+"\">"+
-//            "<input readonly='true' class='dnuminput' name=\"dishOrderList["+orderstu_num+"].dnum\" value=\""+dnum+"\">"+
+            "<input readonly='true' class='dnuminput' value=\""+dnum+"\">个"+
             "<input type='hidden' class='didinput'  value=\""+did+"\"></div>";
     orderaction.prepend(txt1);
 };
 
 $(document).ready(function(){
     var orderstu_price=0;
-    var orderstu_num=0;
     var orderdiv=$("#orderdiv");
     var orderaction=$("#orderaction");
     var priceinput=orderaction.children(".priceinput");
@@ -217,9 +215,8 @@ $(document).ready(function(){
             self.siblings(".decrease").fadeIn();
             self.siblings(".text_box").fadeIn();
             if(dnum==1){
-                prependOrder(orderaction,did,dname,dprice,dnum,orderstu_num);
+                prependOrder(orderaction,did,dname,dprice,dnum);
                 orderaction.find("input").attr("style","width:30px;")
-                orderstu_num+=1;
             }else{
                 var inputdiv=orderaction.children("#"+did);
                 inputdiv.children(".dnuminput").val(dnum);
@@ -286,8 +283,7 @@ $(document).ready(function(){
     });
     //清空按钮
     $("#cleardishorderlist").click(function () {
-        targetFrom=document.forms[0];
-        targetFrom.action="stu_turn_dishInfo";
+        window.location.reload();
     });
 
     //样式
