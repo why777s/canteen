@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Window {
     private String wid;
     private String wname;
+    //
     private Floor floorByFid;
 
     @Id
@@ -56,7 +57,6 @@ public class Window {
     public Floor getFloorByFid() {
         return floorByFid;
     }
-
     public void setFloorByFid(Floor floorByFid) {
         this.floorByFid = floorByFid;
     }

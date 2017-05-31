@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="canteen@localhost" uuid="af99050e-cab4-40a1-8480-797832575e08">
-      <database-info product="MySQL" version="5.5.5-10.1.21-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+    <data-source name="MySQL - canteen@localhost" uuid="bfaf0900-c275-4d17-ab52-46e5186e28d2">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <resolve-scope>canteen:</resolve-scope>
+      <schema-pattern>canteen.*</schema-pattern>
+      <default-schemas>canteen.*</default-schemas>
     </data-source>
   </component>
 </project>

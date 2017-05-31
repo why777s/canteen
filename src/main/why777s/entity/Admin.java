@@ -10,6 +10,7 @@ public class Admin {
     private String aid;
     private String aname;
     private String apassword;
+    //
     private Canteen canteenByCanteenId;
 
 
@@ -27,7 +28,6 @@ public class Admin {
     public String getAid() {
         return aid;
     }
-
     public void setAid(String aid) {
         this.aid = aid;
     }
@@ -37,10 +37,19 @@ public class Admin {
     public String getAname() {
         return aname;
     }
-
     public void setAname(String aname) {
         this.aname = aname;
     }
+
+    @Basic
+    @Column(name = "apassword", nullable = false, length = 45)
+    public String getApassword() {
+        return apassword;
+    }
+    public void setApassword(String apassword) {
+        this.apassword = apassword;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -62,22 +71,10 @@ public class Admin {
         return result;
     }
 
-    @Basic
-    @Column(name = "apassword", nullable = false, length = 45)
-    public String getApassword() {
-        return apassword;
-    }
-
-    public void setApassword(String apassword) {
-        this.apassword = apassword;
-    }
 
     @ManyToOne
     @JoinColumn(name = "canteen_id", referencedColumnName = "canteen_id", nullable = false)
-    public Canteen getCanteenByCanteenId() {
-        return canteenByCanteenId;
-    }
-
+    public Canteen getCanteenByCanteenId() {return canteenByCanteenId;}
     public void setCanteenByCanteenId(Canteen canteenByCanteenId) {
         this.canteenByCanteenId = canteenByCanteenId;
     }
