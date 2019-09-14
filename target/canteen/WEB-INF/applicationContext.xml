@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!-- 数据库配置-->
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/canteen?useUnicode=true&amp;characterEncoding=UTF8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="love1212"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>entity.Admin</value>
+                <value>entity.Canteen</value>
+                <value>entity.Comment</value>
+                <value>entity.Dish</value>
+                <value>entity.Floor</value>
+                <value>entity.Student</value>
+                <value>entity.Window</value>
+                <value>entity.DishOrder</value>
+                <value>entity.OrderStu</value>
+                <value>entity.Employee</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/canteen</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <!-- 显示sql规范语句 -->
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 开启事务注解 -->
+    <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <!-- Dao Bean-->
+    <bean id="adminDao" class="dao.impl.AdminDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="canteenDao" class="dao.impl.CanteenDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="floorDao" class="dao.impl.FloorDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="windowDao" class="dao.impl.WindowDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="dishDao" class="dao.impl.DishDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="studentDao" class="dao.impl.StudentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="orderstuDao" class="dao.impl.OrderStuDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="dishOrderDao" class="dao.impl.DishOrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="employeeDao" class="dao.impl.EmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="commentDao" class="dao.impl.CommentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <!-- Service Bean -->
+    <bean id="adminService" class="service.impl.AdminServiceImpl">
+        <property name="adminDao" ref="adminDao"/>
+        <property name="canteenDao" ref="canteenDao"/>
+        <property name="floorDao" ref="floorDao"/>
+        <property name="windowDao" ref="windowDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="orderStuDao" ref="orderstuDao"/>
+        <property name="dishOrderDao" ref="dishOrderDao"/>
+        <property name="commentDao" ref="commentDao"/>
+    </bean>
+
+    <bean id="studentService" class="service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="canteenDao" ref="canteenDao"/>
+        <property name="commentDao" ref="commentDao"/>
+        <property name="dishorderDao" ref="dishOrderDao"/>
+        <property name="floorDao" ref="floorDao"/>
+        <property name="windowDao" ref="windowDao"/>
+        <property name="orderstuDao" ref="orderstuDao"/>
+    </bean>
+
+    <bean id="employeeService" class="service.impl.EmployeeServiceImpl">
+        <property name="employeeDao" ref="employeeDao"/>
+        <property name="commentDao" ref="commentDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="orderStuDao" ref="orderstuDao"/>
+    </bean>
+
+
+    <!-- Action Bean -->
+    <bean class="controller.LoginAction" id="loginAction">
+        <property name="adminService" ref="adminService"/>
+        <property name="studentService" ref="studentService"/>
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
+    <bean class="controller.AdminAction" id="adminAction">
+        <property name="adminService" ref="adminService"/>
+    </bean>
+
+    <bean class="controller.StudentAction" id="studentAction">
+        <property name="studentService" ref="studentService"/>
+    </bean>
+
+    <bean class="controller.EmployeeAction" id="employeeAction">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
+
+    <bean id="noticeJob" class="util.NoticeJob"/>
+
+
+    <!-- 调度业务  -->
+    <bean id="openQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="noticeJob"/>
+        <property name="targetMethod" value="test"/>
+    </bean>
+
+    <!-- 定义触发器Bean -->
+    <!-- Seconds Minutes Hours DayofMonth Month DayofWeek Year -->
+    <!-- 周一到周五每天的10点和16点执行-->
+    <bean id="myTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="openQuartz"/>
+        <property name="cronExpression" value="0 0 10,14 ? * MON-SUN"/>
+    </bean>
+
+    <!-- 开启调度 -->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="openQuartz"/>
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="myTrigger2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="testAction" class="controller.testAction">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
+
+
+</beans>

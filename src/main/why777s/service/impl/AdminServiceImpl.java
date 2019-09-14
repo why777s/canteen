@@ -72,6 +72,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Transactional
+    public List<Floor> getAllFloor(){
+        return floorDao.findall(Floor.class);
+    }
+
+    @Transactional
     public Admin getAdmin(String aid) {
         return adminDao.get(Admin.class,aid);
     }

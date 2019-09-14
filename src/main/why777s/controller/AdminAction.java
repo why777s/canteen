@@ -212,8 +212,9 @@ public class AdminAction extends ActionSupport {
      */
     public String turnCanteenInfo() throws Exception{
         String aid = getUserFromSession();
-        admin = adminService.getAdmin(aid);
-        floors = adminService.getFloorByAdminId(aid);
+//        admin = adminService.getAdmin(aid);
+//        floors = adminService.getFloorByAdminId(aid);
+        floors=adminService.getAllFloor();
         return SUCCESS;
     }
 
@@ -223,15 +224,15 @@ public class AdminAction extends ActionSupport {
      */
     public String turnDishInfo() throws Exception{
         ad_downmenu_wid = "";
-        String aid = getUserFromSession();
-        admin = adminService.getAdmin(aid);
-        floorList = adminService.getFloorByAdminId(aid);
+//        String aid = getUserFromSession();
+//        admin = adminService.getAdmin(aid);
+//        floorList = adminService.getFloorByAdminId(aid);
+        floorList=adminService.getAllFloor();
         dishes = adminService.getAllDishes();
         System.out.println("xixii");
         System.out.println(dishes.get(0).getDname());
         try{
             first_windows = adminService.getWindowByFloorId(floorList.get(0).getFid());
-
             second_windows = adminService.getWindowByFloorId(floorList.get(1).getFid());
         }catch (NullPointerException e){
             e.printStackTrace();

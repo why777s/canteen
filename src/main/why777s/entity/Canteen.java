@@ -9,15 +9,16 @@ import javax.persistence.*;
 public class Canteen {
     private String canteenId;
     private String canteenCname;
-
     private String status;
+
+    public Canteen() {
+    }
 
     @Id
     @Column(name = "canteen_id", nullable = false, length = 45)
     public String getCanteenId() {
         return canteenId;
     }
-
     public void setCanteenId(String canteenId) {
         this.canteenId = canteenId;
     }
@@ -27,7 +28,6 @@ public class Canteen {
     public String getCanteenCname() {
         return canteenCname;
     }
-
     public void setCanteenCname(String canteenCname) {
         this.canteenCname = canteenCname;
     }
@@ -38,12 +38,9 @@ public class Canteen {
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
-
-
 
 
 

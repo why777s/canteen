@@ -23,6 +23,7 @@ public interface StudentService {
     /**
      * Gets stu.
      * 根据学生id，获得学生实体
+     *
      * @param sid the sid
      * @return the stu
      */
@@ -31,22 +32,42 @@ public interface StudentService {
     /**
      * Gets order.
      * 查询学生订单
+     *
      * @param sid the sid
      * @return the order
      */
-    List<OrderStu> getOrder(String sid);
+    List<OrderStu> getOrderStu(String sid);
 
     /**
      * Gets comment.
      * 查询学生评论
+     *
      * @param sid the sid
      * @return the comment
      */
     List<Comment> getComment(String sid);
 
     /**
+     * Save comment list.
+     * 保存学生评论
+     *
+     * @param comment the comment
+     * @return the list
+     */
+    void saveComment(Comment comment);
+
+    /**
+     * Save order.
+     *保存订单(拆成两个，orderstu,dishorder)
+     * @param ordstu        the ordstu
+     * @param dishOrderList the dish order list
+     */
+    void saveOrder(OrderStu ordstu,List<DishOrder> dishOrderList);
+
+    /**
      * Gets all canteen.
      * 查询食堂吧..
+     *
      * @return the all canteen
      */
     List<Canteen> getAllCanteen();
@@ -54,6 +75,7 @@ public interface StudentService {
     /**
      * Gets window by floor id.
      * 获得各窗口实体
+     *
      * @param fid the fid
      * @return the window by floor id
      */
@@ -62,6 +84,7 @@ public interface StudentService {
     /**
      * Gets all dishes.
      * 查询所有餐品
+     *
      * @return the all dishes
      */
     List<Dish> getAllDishes();
