@@ -11,24 +11,23 @@ public class Comment {
     private int commentId;
     private String commentContent;
     private Date commentTime;
-
     private int did;
     private String sid;
+    //
     private Dish dishByDid;
     private Student studentBySid;
 
+    public Comment() {
+    }
 
     @Id
     @Column(name = "comment_id", nullable = false)
     public int getCommentId() {
         return commentId;
     }
-
     public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
-
-
 
     @Basic
     @Column(name = "did",nullable = false)
@@ -45,7 +44,6 @@ public class Comment {
     public String getCommentContent() {
         return commentContent;
     }
-
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent;
     }
@@ -55,7 +53,6 @@ public class Comment {
     public Date getCommentTime() {
         return commentTime;
     }
-
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }
@@ -85,10 +82,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "sid",referencedColumnName = "sid",nullable = false,insertable = false,updatable = false)
-    public Student getStudentBySid() {
-        return studentBySid;
-    }
-
+    public Student getStudentBySid() {return studentBySid;}
     public void setStudentBySid(Student studentBySid) {
         this.studentBySid = studentBySid;
     }

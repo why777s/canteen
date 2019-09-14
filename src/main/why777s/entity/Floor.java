@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Floor {
     private String fid;
     private String fname;
+    //
     private Canteen canteenByCanteenId;
 
     @Id
@@ -56,7 +57,6 @@ public class Floor {
     public Canteen getCanteenByCanteenId() {
         return canteenByCanteenId;
     }
-
     public void setCanteenByCanteenId(Canteen canteenByCanteenId) {
         this.canteenByCanteenId = canteenByCanteenId;
     }
